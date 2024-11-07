@@ -18,7 +18,7 @@ func incrementar_moneda():
 func _process(delta: float) -> void:
 	$Camera2D/CoinsCollecter.text = str(monedas)
 	
-	if monedas==2:
+	if monedas==3:
 		get_tree().change_scene_to_file("res://Nivel_2.tscn")
 
 func _physics_process(delta: float) -> void:
