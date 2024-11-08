@@ -1,4 +1,4 @@
-[gd_scene load_steps=77 format=4 uid="uid://csvi8rirhvkb1"]
+[gd_scene load_steps=79 format=4 uid="uid://csvi8rirhvkb1"]
 
 [ext_resource type="Texture2D" uid="uid://bhq6fq2xgp6pt" path="res://Rocky Roads/Deco/water_a_8frames.png" id="1_vklu4"]
 [ext_resource type="Texture2D" uid="uid://cldvjofhmfhd1" path="res://Rocky Roads/Backgrounds/mountains_b.png" id="2_j4yld"]
@@ -172,7 +172,7 @@ size = Vector2(62, 108)
 size = Vector2(90, 121)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ukifr"]
-size = Vector2(29, 20)
+size = Vector2(26, 12.25)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_skhgc"]
 atlas = ExtResource("12_soswe")
@@ -209,6 +209,12 @@ animations = [{
 "name": &"walk",
 "speed": 6.0
 }]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xh0fh"]
+size = Vector2(30, 12)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8aaft"]
+size = Vector2(25, 7)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_o2qcr"]
 atlas = ExtResource("10_5mg6i")
@@ -535,7 +541,7 @@ position = Vector2(695, -79)
 script = ExtResource("12_w4cac")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Enemy"]
-position = Vector2(-115.5, 127)
+position = Vector2(-114, 131.125)
 shape = SubResource("RectangleShape2D_ukifr")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Enemy"]
@@ -543,7 +549,19 @@ position = Vector2(-116, 119)
 scale = Vector2(1.164, 1.129)
 sprite_frames = SubResource("SpriteFrames_mnh7o")
 animation = &"walk"
-frame_progress = 0.103488
+frame_progress = 0.165052
+
+[node name="Area2D" type="Area2D" parent="Enemy"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Enemy/Area2D"]
+position = Vector2(-114, 131)
+shape = SubResource("RectangleShape2D_xh0fh")
+
+[node name="Area2D2" type="Area2D" parent="Enemy"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Enemy/Area2D2"]
+position = Vector2(-113.5, 120.5)
+shape = SubResource("RectangleShape2D_8aaft")
 
 [node name="Finn" type="CharacterBody2D" parent="."]
 position = Vector2(206, -86)
@@ -575,17 +593,17 @@ hframes = 8
 
 [node name="Label" type="Label" parent="Finn/Camera2D"]
 offset_left = -99.0
-offset_top = -132.0
+offset_top = -131.0
 offset_right = -49.0
-offset_bottom = -101.0
+offset_bottom = -100.0
 text = ":"
 
 [node name="CoinsCollecter" type="Label" parent="Finn/Camera2D"]
 offset_left = -91.0
-offset_top = -131.0
+offset_top = -130.0
 offset_right = -47.0
-offset_bottom = -107.0
-text = "00"
+offset_bottom = -106.0
+text = "0"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Finn"]
 position = Vector2(-123, 111)
@@ -664,6 +682,8 @@ offset_right = 95.0
 offset_bottom = -41.0
 text = "Nivel 1"
 
+[connection signal="body_entered" from="Enemy/Area2D" to="Enemy" method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="Enemy/Area2D2" to="Enemy" method="_on_area_2d_2_body_entered"]
 [connection signal="body_entered" from="Coin/Area2D" to="Coin" method="_on_area_2d_body_entered"]
 [connection signal="body_entered" from="Coin2/Area2D" to="Coin2" method="_on_area_2d_body_entered"]
 [connection signal="body_entered" from="Coin3/Area2D" to="Coin3" method="_on_area_2d_body_entered"]

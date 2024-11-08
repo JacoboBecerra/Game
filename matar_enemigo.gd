@@ -1,5 +1,4 @@
-extends CharacterBody2D
-
+extends Area2D
 
 const SPEED = 40.0
 var left_limit: float = 605.0  # Límite izquierdo en la posición X
@@ -30,14 +29,12 @@ func _physics_process(delta):
 		direction = 1 
 		animation_player.play("walk")
 
-
-
-
-func _on_area_2d_2_body_entered(body: Node2D) -> void:
-	if body.get_name() == "Finn":
+func _on_area_2d_body_entered(body: Node2D) -> void:
+	if body.name == "Finn":
+		print("Cogiste la moneda!!")
+		body.incrementar_moneda()
 		queue_free()
 
 
-func _on_area_2d_body_entered(body: Node2D) -> void:
-	if body.get_name() == "Finn":
-		get_tree().reload_current_scene()
+func _on_body_entered(body: Node2D) -> void:
+	pass # Replace with function body.
