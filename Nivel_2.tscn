@@ -399,8 +399,8 @@ b = Vector2(499, -29)
 [node name="Nivel_2" type="Node2D"]
 
 [node name="Sky" type="Sprite2D" parent="."]
-position = Vector2(315, -47.5)
-scale = Vector2(3.50781, 1.52344)
+position = Vector2(315, -82)
+scale = Vector2(3.50781, 1.9375)
 texture = ExtResource("1_bj84y")
 
 [node name="Sun" type="Node2D" parent="."]
