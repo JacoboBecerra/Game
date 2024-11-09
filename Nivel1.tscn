@@ -665,23 +665,6 @@ script = ExtResource("12_r28so")
 position = Vector2(6, -14)
 shape = SubResource("SegmentShape2D_psx1q")
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
-follow_viewport_enabled = true
-
-[node name="Panel" type="Panel" parent="CanvasLayer"]
-offset_left = 31.0
-offset_top = -73.0
-offset_right = 93.0
-offset_bottom = -33.0
-
-[node name="Label" type="Label" parent="CanvasLayer"]
-modulate = Color(1, 1, 1, 0.976471)
-offset_left = 36.0
-offset_top = -64.0
-offset_right = 95.0
-offset_bottom = -41.0
-text = "Nivel 1"
-
 [connection signal="body_entered" from="Enemy/Area2D" to="Enemy" method="_on_area_2d_body_entered"]
 [connection signal="body_entered" from="Enemy/Area2D2" to="Enemy" method="_on_area_2d_2_body_entered"]
 [connection signal="body_entered" from="Coin/Area2D" to="Coin" method="_on_area_2d_body_entered"]

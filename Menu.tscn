@@ -1,0 +1,204 @@
+[gd_scene load_steps=24 format=3 uid="uid://8p84d00358gm"]
+
+[ext_resource type="Script" path="res://menu.gd" id="1_0c3b0"]
+[ext_resource type="Texture2D" uid="uid://bhq6fq2xgp6pt" path="res://Rocky Roads/Deco/water_a_8frames.png" id="2_8ane2"]
+[ext_resource type="Texture2D" uid="uid://d1cbtwgbnlil0" path="res://Rocky Roads/Deco/sun.png" id="3_ib31g"]
+[ext_resource type="Texture2D" uid="uid://jd4vk8jx8vn" path="res://Rocky Roads/Backgrounds/mountains_a.png" id="4_25lsc"]
+[ext_resource type="Texture2D" uid="uid://bprs7jr45cibe" path="res://Rocky Roads/Backgrounds/clouds.png" id="6_b81lx"]
+[ext_resource type="Texture2D" uid="uid://dfquwh05mip27" path="res://Rocky Roads/Enemies/quicksand_8frames.png" id="7_pxsd4"]
+[ext_resource type="Texture2D" uid="uid://b350cs8a1v66t" path="res://Rocky Roads/Deco/tree_c.png" id="8_4jq3f"]
+[ext_resource type="Texture2D" uid="uid://8tno7wj4p7nk" path="res://Rocky Roads/Deco/clouds.png" id="9_a37rs"]
+[ext_resource type="Texture2D" uid="uid://cw0dyjhlbkd5j" path="res://Rocky Roads/Enemies/crab.png" id="10_mllpu"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_84cwa"]
+atlas = ExtResource("3_ib31g")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jyma1"]
+atlas = ExtResource("3_ib31g")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_elj1c"]
+atlas = ExtResource("3_ib31g")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iq4rk"]
+atlas = ExtResource("3_ib31g")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n4qxq"]
+atlas = ExtResource("3_ib31g")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p5vpv"]
+atlas = ExtResource("3_ib31g")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_w128o"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_84cwa")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jyma1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_elj1c")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iq4rk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n4qxq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p5vpv")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c54xo"]
+atlas = ExtResource("10_mllpu")
+region = Rect2(0, 16, 32, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h33px"]
+atlas = ExtResource("10_mllpu")
+region = Rect2(32, 16, 32, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tyyfg"]
+atlas = ExtResource("10_mllpu")
+region = Rect2(0, 32, 32, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d78fd"]
+atlas = ExtResource("10_mllpu")
+region = Rect2(32, 32, 32, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_l0eqg"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c54xo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h33px")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tyyfg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d78fd")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tco3t"]
+bg_color = Color(0.890196, 0.917647, 0.992157, 0.4)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_j4kvw"]
+bg_color = Color(0.890196, 0.917647, 0.992157, 0.4)
+
+[node name="Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_0c3b0")
+
+[node name="WaterA8Frames2" type="Sprite2D" parent="."]
+position = Vector2(588, 71)
+scale = Vector2(4.61719, 14)
+texture = ExtResource("2_8ane2")
+
+[node name="Sun" type="AnimatedSprite2D" parent="."]
+position = Vector2(653, 255)
+scale = Vector2(9.5, 8)
+sprite_frames = SubResource("SpriteFrames_w128o")
+animation = &"idle"
+frame = 2
+frame_progress = 0.599366
+
+[node name="MountainsA" type="Sprite2D" parent="."]
+position = Vector2(574.5, 283)
+scale = Vector2(4.51953, 3.73437)
+texture = ExtResource("4_25lsc")
+
+[node name="WaterA8Frames" type="Sprite2D" parent="."]
+position = Vector2(581, 505)
+rotation = 3.1413
+scale = Vector2(4.79686, 3.84375)
+texture = ExtResource("2_8ane2")
+
+[node name="Clouds" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0.478431)
+position = Vector2(573.5, 377)
+scale = Vector2(4.62891, 1.46875)
+texture = ExtResource("6_b81lx")
+
+[node name="Quicksand8Frames2" type="Sprite2D" parent="."]
+position = Vector2(578.25, 582.25)
+scale = Vector2(4.72461, 2.42187)
+texture = ExtResource("7_pxsd4")
+
+[node name="Quicksand8Frames3" type="Sprite2D" parent="."]
+position = Vector2(578.25, 657.25)
+scale = Vector2(4.72461, 2.42187)
+texture = ExtResource("7_pxsd4")
+
+[node name="TreeC" type="Sprite2D" parent="."]
+position = Vector2(939, 518)
+scale = Vector2(1.70833, 1.79167)
+texture = ExtResource("8_4jq3f")
+
+[node name="Clouds2" type="Sprite2D" parent="."]
+position = Vector2(470, 153)
+scale = Vector2(1.71875, 1.875)
+texture = ExtResource("9_a37rs")
+vframes = 3
+
+[node name="Clouds3" type="Sprite2D" parent="."]
+position = Vector2(769, 197)
+scale = Vector2(1.71875, 1.875)
+texture = ExtResource("9_a37rs")
+vframes = 3
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(222, 605.75)
+scale = Vector2(2.0625, 2.03125)
+sprite_frames = SubResource("SpriteFrames_l0eqg")
+animation = &"idle"
+frame_progress = 0.0182736
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+custom_minimum_size = Vector2(200, 250)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -100.0
+offset_top = -56.0
+offset_right = 100.0
+offset_bottom = 194.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Start_game" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_styles/focus = SubResource("StyleBoxFlat_tco3t")
+text = "Start Game"
+
+[node name="Quit" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_styles/focus = SubResource("StyleBoxFlat_j4kvw")
+text = "Quit"
+
+[connection signal="pressed" from="VBoxContainer/Start_game" to="." method="_on_start_game_pressed"]
+[connection signal="pressed" from="VBoxContainer/Quit" to="." method="_on_quit_pressed"]
