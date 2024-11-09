@@ -6,6 +6,7 @@ func _ready() -> void:
 	$VBoxContainer/Start_game.grab_focus()
 	$AnimatedSprite2D.play("idle")
 	$Sun.play("idle")
+	
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:

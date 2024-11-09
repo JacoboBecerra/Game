@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://8p84d00358gm"]
+[gd_scene load_steps=25 format=3 uid="uid://8p84d00358gm"]
 
 [ext_resource type="Script" path="res://menu.gd" id="1_0c3b0"]
 [ext_resource type="Texture2D" uid="uid://bhq6fq2xgp6pt" path="res://Rocky Roads/Deco/water_a_8frames.png" id="2_8ane2"]
@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://b350cs8a1v66t" path="res://Rocky Roads/Deco/tree_c.png" id="8_4jq3f"]
 [ext_resource type="Texture2D" uid="uid://8tno7wj4p7nk" path="res://Rocky Roads/Deco/clouds.png" id="9_a37rs"]
 [ext_resource type="Texture2D" uid="uid://cw0dyjhlbkd5j" path="res://Rocky Roads/Enemies/crab.png" id="10_mllpu"]
+[ext_resource type="AudioStream" uid="uid://cr851nv8lwe4c" path="res://Music/Music/The Fall of Arcana.mp3" id="10_ntriy"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_84cwa"]
 atlas = ExtResource("3_ib31g")
@@ -142,13 +143,13 @@ scale = Vector2(4.62891, 1.46875)
 texture = ExtResource("6_b81lx")
 
 [node name="Quicksand8Frames2" type="Sprite2D" parent="."]
-position = Vector2(578.25, 582.25)
-scale = Vector2(4.72461, 2.42187)
+position = Vector2(578.25, 583.25)
+scale = Vector2(4.72461, 2.48437)
 texture = ExtResource("7_pxsd4")
 
 [node name="Quicksand8Frames3" type="Sprite2D" parent="."]
-position = Vector2(578.25, 657.25)
-scale = Vector2(4.72461, 2.42187)
+position = Vector2(578.25, 652.5)
+scale = Vector2(4.72461, 2.90625)
 texture = ExtResource("7_pxsd4")
 
 [node name="TreeC" type="Sprite2D" parent="."]
@@ -199,6 +200,10 @@ text = "Start Game"
 layout_mode = 2
 theme_override_styles/focus = SubResource("StyleBoxFlat_j4kvw")
 text = "Quit"
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("10_ntriy")
+autoplay = true
 
 [connection signal="pressed" from="VBoxContainer/Start_game" to="." method="_on_start_game_pressed"]
 [connection signal="pressed" from="VBoxContainer/Quit" to="." method="_on_quit_pressed"]
