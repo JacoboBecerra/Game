@@ -1,4 +1,4 @@
-[gd_scene load_steps=67 format=4 uid="uid://0fho0xwvfn2c"]
+[gd_scene load_steps=58 format=4 uid="uid://0fho0xwvfn2c"]
 
 [ext_resource type="Texture2D" uid="uid://diu17it0qay7j" path="res://Rocky Roads/Backgrounds/desert_a.png" id="1_bj84y"]
 [ext_resource type="Texture2D" uid="uid://bprs7jr45cibe" path="res://Rocky Roads/Backgrounds/clouds.png" id="2_e4vxq"]
@@ -13,6 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://do18814hsc8uk" path="res://character/FinnSprite.png" id="10_tajhe"]
 [ext_resource type="Texture2D" uid="uid://by1obhtpf6mlx" path="res://Rocky Roads/Objects/coin_gold.png" id="11_rs6rr"]
 [ext_resource type="Script" path="res://ZonaCaida.gd" id="12_o37c3"]
+[ext_resource type="PackedScene" uid="uid://c2kyfoudbbmqu" path="res://coin.tscn" id="14_ofir8"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_n0vrd"]
 atlas = ExtResource("5_6r0om")
@@ -132,7 +133,7 @@ sources/2 = SubResource("TileSetAtlasSource_co3rh")
 sources/3 = SubResource("TileSetAtlasSource_mom3a")
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_nn25h"]
-a = Vector2(-63, -115)
+a = Vector2(-57, -112)
 b = Vector2(-58, 132)
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_ec3jk"]
@@ -325,73 +326,6 @@ corner_radius_top_right = 15
 corner_radius_bottom_right = 15
 corner_radius_bottom_left = 15
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_udqd7"]
-radius = 12.0
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_ysx3q"]
-atlas = ExtResource("11_rs6rr")
-region = Rect2(0, 0, 16, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_jqubv"]
-atlas = ExtResource("11_rs6rr")
-region = Rect2(16, 0, 16, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_btw7n"]
-atlas = ExtResource("11_rs6rr")
-region = Rect2(32, 0, 16, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_yaytk"]
-atlas = ExtResource("11_rs6rr")
-region = Rect2(48, 0, 16, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_6a6tl"]
-atlas = ExtResource("11_rs6rr")
-region = Rect2(64, 0, 16, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_mq3nn"]
-atlas = ExtResource("11_rs6rr")
-region = Rect2(80, 0, 16, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_t66b7"]
-atlas = ExtResource("11_rs6rr")
-region = Rect2(96, 0, 16, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_xm3ak"]
-atlas = ExtResource("11_rs6rr")
-region = Rect2(112, 0, 16, 16)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_yhcde"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_ysx3q")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_jqubv")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_btw7n")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_yaytk")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_6a6tl")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_mq3nn")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_t66b7")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_xm3ak")
-}],
-"loop": true,
-"name": &"idle",
-"speed": 9.0
-}]
-
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_psx1q"]
 a = Vector2(-210, -31)
 b = Vector2(499, -29)
@@ -511,38 +445,6 @@ offset_right = -47.0
 offset_bottom = -107.0
 text = "00"
 
-[node name="Coin" type="Node2D" parent="."]
-position = Vector2(337, 92)
-script = ExtResource("4_lyosy")
-
-[node name="Area2D" type="Area2D" parent="Coin"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Coin/Area2D"]
-position = Vector2(-1, 20)
-shape = SubResource("CircleShape2D_udqd7")
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Coin"]
-position = Vector2(-0.999981, 21)
-scale = Vector2(1.75196, 1.375)
-sprite_frames = SubResource("SpriteFrames_yhcde")
-animation = &"idle"
-
-[node name="Coin2" type="Node2D" parent="."]
-position = Vector2(527, 45)
-script = ExtResource("4_lyosy")
-
-[node name="Area2D" type="Area2D" parent="Coin2"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Coin2/Area2D"]
-position = Vector2(-1, 20)
-shape = SubResource("CircleShape2D_udqd7")
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Coin2"]
-position = Vector2(1.90735e-05, 20)
-scale = Vector2(1.75196, 1.375)
-sprite_frames = SubResource("SpriteFrames_yhcde")
-animation = &"idle"
-
 [node name="Area2D" type="Area2D" parent="."]
 position = Vector2(149, 180)
 script = ExtResource("12_o37c3")
@@ -551,6 +453,7 @@ script = ExtResource("12_o37c3")
 position = Vector2(6, -14)
 shape = SubResource("SegmentShape2D_psx1q")
 
-[connection signal="body_entered" from="Coin/Area2D" to="Coin" method="_on_area_2d_body_entered"]
-[connection signal="body_entered" from="Coin2/Area2D" to="Coin2" method="_on_area_2d_body_entered"]
+[node name="Coin" parent="." instance=ExtResource("14_ofir8")]
+position = Vector2(254, 37)
+
 [connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
