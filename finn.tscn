@@ -1,8 +1,9 @@
-[gd_scene load_steps=27 format=3 uid="uid://c30eiyjcun7gx"]
+[gd_scene load_steps=28 format=3 uid="uid://c30eiyjcun7gx"]
 
 [ext_resource type="Script" path="res://character_body_2d.gd" id="1_ll52t"]
 [ext_resource type="Texture2D" uid="uid://do18814hsc8uk" path="res://character/FinnSprite.png" id="2_vmx0i"]
 [ext_resource type="Texture2D" uid="uid://by1obhtpf6mlx" path="res://Rocky Roads/Objects/coin_gold.png" id="3_qswe7"]
+[ext_resource type="AudioStream" uid="uid://dk58pl24mtxra" path="res://Music/Sounds/jump-up-245782.mp3" id="4_nlb7r"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_o2qcr"]
 atlas = ExtResource("2_vmx0i")
@@ -170,15 +171,15 @@ corner_radius_bottom_right = 15
 corner_radius_bottom_left = 15
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_f0hwr"]
-size = Vector2(20, 34)
+size = Vector2(18, 35)
 
 [node name="Finn" type="CharacterBody2D"]
 position = Vector2(206, -86)
 script = ExtResource("1_ll52t")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(-119, 110.063)
-scale = Vector2(1.57813, 1.75391)
+position = Vector2(-120.625, 111)
+scale = Vector2(1.47656, 1.81249)
 sprite_frames = SubResource("SpriteFrames_oygph")
 animation = &"idle"
 frame_progress = 0.630448
@@ -215,5 +216,9 @@ offset_bottom = -106.0
 text = "0"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-123, 111)
+position = Vector2(-124, 111.5)
 shape = SubResource("RectangleShape2D_f0hwr")
+
+[node name="jump" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_nlb7r")
+volume_db = -8.0

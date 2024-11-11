@@ -1,0 +1,79 @@
+[gd_scene load_steps=11 format=3 uid="uid://dkm27d6eab5sy"]
+
+[ext_resource type="Script" path="res://enemy.gd" id="1_2njah"]
+[ext_resource type="Texture2D" uid="uid://ckqk7tsjsuy24" path="res://Rocky Roads/Enemies/bear_brown.png" id="2_ndhj0"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ukifr"]
+size = Vector2(26, 12.25)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_skhgc"]
+atlas = ExtResource("2_ndhj0")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rrefy"]
+atlas = ExtResource("2_ndhj0")
+region = Rect2(32, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n4u72"]
+atlas = ExtResource("2_ndhj0")
+region = Rect2(64, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8pict"]
+atlas = ExtResource("2_ndhj0")
+region = Rect2(96, 32, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_mnh7o"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_skhgc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rrefy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n4u72")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8pict")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 6.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xh0fh"]
+size = Vector2(30, 12)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8aaft"]
+size = Vector2(25, 7)
+
+[node name="Enemy" type="CharacterBody2D"]
+position = Vector2(695, -79)
+script = ExtResource("1_2njah")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-114, 131.125)
+shape = SubResource("RectangleShape2D_ukifr")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(-116, 119)
+scale = Vector2(1.164, 1.129)
+sprite_frames = SubResource("SpriteFrames_mnh7o")
+animation = &"walk"
+frame_progress = 0.165052
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-114, 131)
+shape = SubResource("RectangleShape2D_xh0fh")
+
+[node name="Area2D2" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D2"]
+position = Vector2(-113.5, 120.5)
+shape = SubResource("RectangleShape2D_8aaft")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="Area2D2" to="." method="_on_area_2d_2_body_entered"]

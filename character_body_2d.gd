@@ -5,6 +5,7 @@ const SPEED = 175.0
 const JUMP_VELOCITY = -350.0
 
 var monedas = 0
+var daño = 0
 
 
 
@@ -13,7 +14,7 @@ func _ready() -> void:
 	
 func incrementar_moneda():
 	monedas = monedas + 1
-	print("Tienes " + str(monedas) + " monedas")	
+	print("Tienes " + str(monedas) + " monedas")
 	
 func _process(delta: float) -> void:
 	$Camera2D/CoinsCollecter.text = str(monedas)
@@ -28,7 +29,9 @@ func _physics_process(delta: float) -> void:
 
 	# Handle jump.
 	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
+		$jump.play()
 		velocity.y = JUMP_VELOCITY
+		
 
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.

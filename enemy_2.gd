@@ -3,8 +3,8 @@ extends CharacterBody2D
 #y que se una al scrip del enemigo body.enemgigos_dead() para pasar de nivel
 
 const SPEED = 40.0
-var left_limit: float = 605.0  # Límite izquierdo en la posición X
-var right_limit: float = 850.0  # Límite derecho en la posición X
+var left_limit: float = 1895.0  # Límite izquierdo en la posición X
+var right_limit: float = 1970.0  # Límite derecho en la posición X
 @onready var animation_player = $AnimatedSprite2D
 
 
@@ -35,12 +35,11 @@ func _physics_process(delta):
 
 
 
-
-func _on_area_2d_2_body_entered(body: Node2D) -> void:
-	if body.get_name() == "Finn":
-		queue_free()
-
-
-func _on_area_2d_body_entered(body: Node2D) -> void:
+func _on_eliminar_body_entered(body: Node2D) -> void:
 	if body.get_name() == "Finn":
 		get_tree().reload_current_scene()
+
+
+func _on_dead_body_entered(body: Node2D) -> void:
+	if body.get_name() == "Finn":
+		queue_free()
