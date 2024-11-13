@@ -189,30 +189,30 @@ position = Vector2(-57, 90)
 zoom = Vector2(4, 2)
 
 [node name="Panel" type="Panel" parent="Camera2D"]
-offset_left = -140.0
-offset_top = -138.0
-offset_right = -68.0
-offset_bottom = -98.0
+offset_left = -137.0
+offset_top = -164.0
+offset_right = -71.0
+offset_bottom = -124.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_docc4")
 
 [node name="Sprite2D" type="Sprite2D" parent="Camera2D"]
-position = Vector2(-118, -118.75)
-scale = Vector2(2.28125, 2.28125)
+position = Vector2(-119.125, -143.75)
+scale = Vector2(2.01562, 2.28125)
 texture = ExtResource("3_qswe7")
 hframes = 8
 
 [node name="Label" type="Label" parent="Camera2D"]
-offset_left = -99.0
-offset_top = -131.0
-offset_right = -49.0
-offset_bottom = -100.0
+offset_left = -102.0
+offset_top = -156.0
+offset_right = -52.0
+offset_bottom = -125.0
 text = ":"
 
 [node name="CoinsCollecter" type="Label" parent="Camera2D"]
 offset_left = -91.0
-offset_top = -130.0
-offset_right = -47.0
-offset_bottom = -106.0
+offset_top = -155.0
+offset_right = -50.0
+offset_bottom = -123.0
 text = "0"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

@@ -6,12 +6,21 @@ const JUMP_VELOCITY = -350.0
 
 var monedas = 0
 var daño = 0
+var vida = 3
 
 
 
 func _ready() -> void:
 	$AnimatedSprite2D.play("idle")
 	
+	
+
+func incrementar_vida():
+	vida = vida + 1
+	print("Tienes " + str(vida) + " vidas")
+
+
+
 func incrementar_moneda():
 	monedas = monedas + 1
 	print("Tienes " + str(monedas) + " monedas")
@@ -19,7 +28,7 @@ func incrementar_moneda():
 func _process(delta: float) -> void:
 	$Camera2D/CoinsCollecter.text = str(monedas)
 	
-	if monedas==3:
+	if monedas==20:
 		get_tree().change_scene_to_file("res://Nivel_2.tscn")
 
 func _physics_process(delta: float) -> void:
