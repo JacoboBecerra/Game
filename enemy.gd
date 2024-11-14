@@ -35,9 +35,10 @@ func _physics_process(delta):
 
 
 
-
+#El audio del enemigo debe ir en una funcion de Finn para que no se interrumpa con el queue_free
 func _on_area_2d_2_body_entered(body: Node2D) -> void:
 	if body.get_name() == "Finn":
+		body.enemy_sound()
 		queue_free()
 
 

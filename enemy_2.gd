@@ -43,4 +43,5 @@ func _on_eliminar_body_entered(body: Node2D) -> void:
 
 func _on_dead_body_entered(body: Node2D) -> void:
 	if body.get_name() == "Finn":
+		body.enemy_sound()
 		queue_free()

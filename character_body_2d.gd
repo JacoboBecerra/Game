@@ -18,22 +18,29 @@ func _ready() -> void:
 	$AnimatedSprite2D.play("idle")
 	camara2D.corazones_ui(vida)
 	
-	
+func enemy_sound():
+	$enemy_death.play()
 
 func disminuir_vida(enemypos):
+	#$AnimatedSprite2D.play("hurt")
 	var direcion_salto = position.x - enemypos
 	if direcion_salto < 0:
 		velocity.x = -800
-		velocity.y = -400
+		
 	else:
 		velocity.x = 800
-		velocity.y = -400
-
+	
+	velocity.y = -400
+	
+	$AudioStreamPlayer2D.play()
+	
 	vida = vida - 1
 	print("Tienes " + str(vida) + " vidas")
 	
 	camara2D.corazones_ui(vida)
-	
+
+
+
 
 func incrementar_vida():
 	vida = vida + 1
