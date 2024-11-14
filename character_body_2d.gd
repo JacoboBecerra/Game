@@ -7,19 +7,44 @@ const JUMP_VELOCITY = -350.0
 var monedas = 0
 var daño = 0
 var vida = 3
+var control = 0
+var nivel = 0
+@onready var camara2D := get_node("Camera2D")
+
 
 
 
 func _ready() -> void:
 	$AnimatedSprite2D.play("idle")
+	camara2D.corazones_ui(vida)
 	
+	
+
+func disminuir_vida(enemypos):
+	var direcion_salto = position.x - enemypos
+	if direcion_salto < 0:
+		velocity.x = -800
+		velocity.y = -400
+	else:
+		velocity.x = 800
+		velocity.y = -400
+
+	vida = vida - 1
+	print("Tienes " + str(vida) + " vidas")
+	
+	camara2D.corazones_ui(vida)
 	
 
 func incrementar_vida():
 	vida = vida + 1
 	print("Tienes " + str(vida) + " vidas")
+	camara2D.corazones_ui(vida)
 
+func incrementar_nivel():
+	nivel = 1
 
+func disminuir_nivel():
+	nivel = 0
 
 func incrementar_moneda():
 	monedas = monedas + 1
@@ -28,7 +53,10 @@ func incrementar_moneda():
 func _process(delta: float) -> void:
 	$Camera2D/CoinsCollecter.text = str(monedas)
 	
-	if monedas==20:
+	#if vida==4:
+	#	get_tree().change_scene_to_file("res://Nivel_2.tscn")
+	
+	if monedas==12 and nivel == 1:
 		get_tree().change_scene_to_file("res://Nivel_2.tscn")
 
 func _physics_process(delta: float) -> void:

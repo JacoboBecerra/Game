@@ -1,7 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://p5nlaaae2n36"]
+[gd_scene load_steps=9 format=3 uid="uid://p5nlaaae2n36"]
 
 [ext_resource type="Script" path="res://vida.gd" id="1_274x6"]
 [ext_resource type="Texture2D" uid="uid://bslc5y60iolaf" path="res://Rocky Roads/Objects/heart.png" id="2_lkaig"]
+[ext_resource type="AudioStream" uid="uid://dbs5kqyynesck" path="res://Music/Sounds/vida.mp3" id="3_adqni"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_0rs1v"]
 radius = 9.05539
@@ -46,9 +47,12 @@ position = Vector2(-2057, -47)
 shape = SubResource("CircleShape2D_0rs1v")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(218.875, 14.75)
-scale = Vector2(1.64062, 1.40625)
+position = Vector2(218.875, 13.5)
+scale = Vector2(1.64062, 1.5625)
 sprite_frames = SubResource("SpriteFrames_1125o")
 animation = &"idle"
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_adqni")
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

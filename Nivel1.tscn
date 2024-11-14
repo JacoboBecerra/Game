@@ -1,4 +1,4 @@
-[gd_scene load_steps=91 format=4 uid="uid://csvi8rirhvkb1"]
+[gd_scene load_steps=92 format=4 uid="uid://csvi8rirhvkb1"]
 
 [ext_resource type="Texture2D" uid="uid://bhq6fq2xgp6pt" path="res://Rocky Roads/Deco/water_a_8frames.png" id="1_vklu4"]
 [ext_resource type="Texture2D" uid="uid://cldvjofhmfhd1" path="res://Rocky Roads/Backgrounds/mountains_b.png" id="2_j4yld"]
@@ -16,8 +16,8 @@
 [ext_resource type="Script" path="res://ZonaCaida.gd" id="12_r28so"]
 [ext_resource type="Texture2D" uid="uid://ckqk7tsjsuy24" path="res://Rocky Roads/Enemies/bear_brown.png" id="12_soswe"]
 [ext_resource type="PackedScene" uid="uid://c2kyfoudbbmqu" path="res://coin.tscn" id="13_lxr7u"]
-[ext_resource type="Script" path="res://agua_muerte.gd" id="14_5xxow"]
 [ext_resource type="Script" path="res://platform_2.gd" id="14_jrpp6"]
+[ext_resource type="Script" path="res://aguaMuerte.gd" id="14_tbtb1"]
 [ext_resource type="AudioStream" uid="uid://bflawf6j53mtm" path="res://Music/Music/theme1.mp3" id="15_lw2gd"]
 [ext_resource type="Script" path="res://spikes.gd" id="16_3bpge"]
 [ext_resource type="Texture2D" uid="uid://dif0yaykm1q1" path="res://Rocky Roads/Enemies/spikes.png" id="17_to4h6"]
@@ -25,6 +25,7 @@
 [ext_resource type="Script" path="res://finish_line.gd" id="18_fs1ul"]
 [ext_resource type="Texture2D" uid="uid://copvduqt2v61a" path="res://Rocky Roads/Objects/flag.png" id="19_a1261"]
 [ext_resource type="PackedScene" uid="uid://p5nlaaae2n36" path="res://vida.tscn" id="25_oubhi"]
+[ext_resource type="PackedScene" uid="uid://c3bpklewu67kv" path="res://brake_block.tscn" id="26_4eenx"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_n0vrd"]
 atlas = ExtResource("5_3rmkb")
@@ -217,7 +218,7 @@ size = Vector2(570, 94)
 size = Vector2(28, 25)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6j7x1"]
-size = Vector2(26, 24)
+size = Vector2(25, 24)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rvt4r"]
 size = Vector2(27, 22)
@@ -292,6 +293,48 @@ size = Vector2(24, 9)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_74hgd"]
 size = Vector2(19, 9)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ur6hx"]
+size = Vector2(10, 9)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ji836"]
+atlas = ExtResource("9_sriqq")
+region = Rect2(60, 0, 20, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uf3ms"]
+atlas = ExtResource("9_sriqq")
+region = Rect2(40, 0, 20, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5dai7"]
+atlas = ExtResource("9_sriqq")
+region = Rect2(20, 0, 20, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1q3ao"]
+atlas = ExtResource("9_sriqq")
+region = Rect2(0, 0, 20, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_031o5"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ji836")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uf3ms")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5dai7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1q3ao")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 4.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7e2k1"]
+size = Vector2(52, 20)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3qu00"]
 size = Vector2(32, 14)
 
@@ -351,52 +394,6 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_fk7le"]
-size = Vector2(51.5, 19)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_4q6sq"]
-atlas = ExtResource("9_sriqq")
-region = Rect2(0, 0, 16, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_vre56"]
-atlas = ExtResource("9_sriqq")
-region = Rect2(16, 0, 16, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_rp7pn"]
-atlas = ExtResource("9_sriqq")
-region = Rect2(32, 0, 16, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_12lrq"]
-atlas = ExtResource("9_sriqq")
-region = Rect2(48, 0, 16, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_tewjs"]
-atlas = ExtResource("9_sriqq")
-region = Rect2(64, 0, 16, 16)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_potv5"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_4q6sq")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_vre56")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_rp7pn")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_12lrq")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_tewjs")
-}],
-"loop": true,
-"name": &"idle",
-"speed": 4.0
-}]
-
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_psx1q"]
 a = Vector2(-209, 51)
 b = Vector2(2523, 50)
@@ -409,8 +406,8 @@ scale = Vector2(4.90625, 16.3281)
 texture = ExtResource("1_vklu4")
 
 [node name="Sky2" type="Sprite2D" parent="."]
-position = Vector2(1898, -184.625)
-scale = Vector2(6.0625, 16.336)
+position = Vector2(1898, -236.624)
+scale = Vector2(6.0625, 19.586)
 texture = ExtResource("1_vklu4")
 
 [node name="MountainsB" type="Sprite2D" parent="."]
@@ -523,7 +520,7 @@ position = Vector2(1992, 88.5)
 shape = SubResource("RectangleShape2D_erw66")
 
 [node name="CollisionShape2D20" type="CollisionShape2D" parent="Mapa_1"]
-position = Vector2(2072, 87)
+position = Vector2(2071.5, 87)
 shape = SubResource("RectangleShape2D_6j7x1")
 
 [node name="CollisionShape2D21" type="CollisionShape2D" parent="Mapa_1"]
@@ -593,6 +590,50 @@ shape = SubResource("RectangleShape2D_snue2")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="enemy2/dead"]
 position = Vector2(0.5, 1.5)
 shape = SubResource("RectangleShape2D_74hgd")
+
+[node name="aguaMuerte" type="CharacterBody2D" parent="."]
+position = Vector2(2112, 92)
+script = ExtResource("14_tbtb1")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="aguaMuerte"]
+position = Vector2(0, 9)
+shape = SubResource("RectangleShape2D_ur6hx")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="aguaMuerte"]
+position = Vector2(-5.34058e-05, 0)
+scale = Vector2(2.55, 1.75)
+sprite_frames = SubResource("SpriteFrames_031o5")
+animation = &"idle"
+frame = 1
+frame_progress = 0.71287
+
+[node name="Area2D" type="Area2D" parent="aguaMuerte"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="aguaMuerte/Area2D"]
+position = Vector2(0, 4)
+shape = SubResource("RectangleShape2D_7e2k1")
+
+[node name="aguaMuerte2" type="CharacterBody2D" parent="."]
+position = Vector2(2032, 92)
+script = ExtResource("14_tbtb1")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="aguaMuerte2"]
+position = Vector2(0, 9)
+shape = SubResource("RectangleShape2D_ur6hx")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="aguaMuerte2"]
+position = Vector2(-5.34058e-05, 0)
+scale = Vector2(2.55, 1.75)
+sprite_frames = SubResource("SpriteFrames_031o5")
+animation = &"idle"
+frame = 1
+frame_progress = 0.71287
+
+[node name="Area2D" type="Area2D" parent="aguaMuerte2"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="aguaMuerte2/Area2D"]
+position = Vector2(0, 4)
+shape = SubResource("RectangleShape2D_7e2k1")
 
 [node name="platform" type="CharacterBody2D" parent="."]
 position = Vector2(1100, 114)
@@ -690,7 +731,11 @@ sprite_frames = SubResource("SpriteFrames_opu2x")
 animation = &"idle"
 frame_progress = 0.450391
 
-[node name="Finn" parent="." instance=ExtResource("12_m6dlt")]
+[node name="vida" parent="." instance=ExtResource("25_oubhi")]
+position = Vector2(764, 6)
+
+[node name="brake_block" parent="." instance=ExtResource("26_4eenx")]
+position = Vector2(968, 37)
 
 [node name="Coin" parent="." instance=ExtResource("13_lxr7u")]
 position = Vector2(373, 22)
@@ -743,39 +788,7 @@ position = Vector2(2384, -101)
 [node name="Coin16" parent="." instance=ExtResource("13_lxr7u")]
 position = Vector2(2469, -100)
 
-[node name="agua_muerte_1" type="Node" parent="."]
-script = ExtResource("14_5xxow")
-
-[node name="Area2D" type="Area2D" parent="agua_muerte_1"]
-position = Vector2(2016, 95)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="agua_muerte_1/Area2D"]
-position = Vector2(15.75, 2)
-shape = SubResource("RectangleShape2D_fk7le")
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="agua_muerte_1"]
-position = Vector2(2032, 93)
-scale = Vector2(3.25, 1.625)
-sprite_frames = SubResource("SpriteFrames_potv5")
-animation = &"idle"
-frame_progress = 0.189332
-
-[node name="agua_muerte_2" type="Node" parent="."]
-script = ExtResource("14_5xxow")
-
-[node name="Area2D" type="Area2D" parent="agua_muerte_2"]
-position = Vector2(2065, 84)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="agua_muerte_2/Area2D"]
-position = Vector2(46.5, 12.5)
-shape = SubResource("RectangleShape2D_fk7le")
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="agua_muerte_2"]
-position = Vector2(2111.25, 93)
-scale = Vector2(3.21873, 1.625)
-sprite_frames = SubResource("SpriteFrames_potv5")
-animation = &"idle"
-frame_progress = 0.326318
+[node name="Finn" parent="." instance=ExtResource("12_m6dlt")]
 
 [node name="Area2D" type="Area2D" parent="."]
 position = Vector2(149, 180)
@@ -802,14 +815,12 @@ position = Vector2(2360, 35.5)
 scale = Vector2(1, 1.14583)
 texture = ExtResource("10_mrwkk")
 
-[node name="vida" parent="." instance=ExtResource("25_oubhi")]
-
 [connection signal="body_entered" from="enemy2/eliminar" to="enemy2" method="_on_eliminar_body_entered"]
 [connection signal="body_entered" from="enemy2/dead" to="enemy2" method="_on_dead_body_entered"]
+[connection signal="body_entered" from="aguaMuerte/Area2D" to="aguaMuerte" method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="aguaMuerte2/Area2D" to="aguaMuerte2" method="_on_area_2d_body_entered"]
 [connection signal="body_entered" from="spikes/Area2D" to="spikes" method="_on_area_2d_body_entered"]
 [connection signal="body_entered" from="spikes2/Area2D" to="spikes2" method="_on_area_2d_body_entered"]
 [connection signal="body_entered" from="spikes3/Area2D" to="spikes3" method="_on_area_2d_body_entered"]
 [connection signal="body_entered" from="finish_line/Area2D" to="finish_line" method="_on_area_2d_body_entered"]
-[connection signal="body_entered" from="agua_muerte_1/Area2D" to="agua_muerte_1" method="_on_area_2d_body_entered"]
-[connection signal="body_entered" from="agua_muerte_2/Area2D" to="agua_muerte_2" method="_on_area_2d_body_entered"]
 [connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]

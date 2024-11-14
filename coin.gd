@@ -16,7 +16,8 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 		visible=false
 		$AudioStreamPlayer2D.play()
 		body.incrementar_moneda()
-		await get_tree().create_timer(1.25).timeout
+		body.disminuir_nivel()
+		await get_tree().create_timer(0.45).timeout
 		queue_free()
 		
 

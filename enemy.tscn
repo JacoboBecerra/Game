@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://ckqk7tsjsuy24" path="res://Rocky Roads/Enemies/bear_brown.png" id="2_ndhj0"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ukifr"]
-size = Vector2(26, 12.25)
+size = Vector2(29, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_skhgc"]
 atlas = ExtResource("2_ndhj0")
@@ -43,17 +43,17 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xh0fh"]
-size = Vector2(30, 12)
+size = Vector2(32, 16)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8aaft"]
-size = Vector2(25, 7)
+size = Vector2(22, 4)
 
 [node name="Enemy" type="CharacterBody2D"]
 position = Vector2(695, -79)
 script = ExtResource("1_2njah")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-114, 131.125)
+position = Vector2(-113.5, 128)
 shape = SubResource("RectangleShape2D_ukifr")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
@@ -66,13 +66,13 @@ frame_progress = 0.165052
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(-114, 131)
+position = Vector2(-113, 129)
 shape = SubResource("RectangleShape2D_xh0fh")
 
 [node name="Area2D2" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D2"]
-position = Vector2(-113.5, 120.5)
+position = Vector2(-113, 119)
 shape = SubResource("RectangleShape2D_8aaft")
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

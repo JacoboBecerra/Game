@@ -37,7 +37,8 @@ func _physics_process(delta):
 
 func _on_eliminar_body_entered(body: Node2D) -> void:
 	if body.get_name() == "Finn":
-		get_tree().reload_current_scene()
+		body.disminuir_vida(position.x)
+		#get_tree().reload_current_scene()
 
 
 func _on_dead_body_entered(body: Node2D) -> void:

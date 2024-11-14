@@ -1,8 +1,8 @@
 extends CharacterBody2D
 
 const SPEED = 20.0
-var left_limit: float = 1100.0  # Límite izquierdo en la posición X
-var right_limit: float = 1150.0  # Límite derecho en la posición X
+var left_limit: float = 1065.0  # Límite izquierdo en la posición X
+var right_limit: float = 1195.0  # Límite derecho en la posición X
 
 
 var direction: int = 1  # Dirección inicial (1 = derecha, -1 = izquierda)

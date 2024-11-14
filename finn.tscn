@@ -1,9 +1,11 @@
-[gd_scene load_steps=28 format=3 uid="uid://c30eiyjcun7gx"]
+[gd_scene load_steps=30 format=3 uid="uid://c30eiyjcun7gx"]
 
 [ext_resource type="Script" path="res://character_body_2d.gd" id="1_ll52t"]
 [ext_resource type="Texture2D" uid="uid://do18814hsc8uk" path="res://character/FinnSprite.png" id="2_vmx0i"]
+[ext_resource type="Script" path="res://camera_2d.gd" id="3_fg2l3"]
 [ext_resource type="Texture2D" uid="uid://by1obhtpf6mlx" path="res://Rocky Roads/Objects/coin_gold.png" id="3_qswe7"]
 [ext_resource type="AudioStream" uid="uid://dk58pl24mtxra" path="res://Music/Sounds/jump-up-245782.mp3" id="4_nlb7r"]
+[ext_resource type="Texture2D" uid="uid://bslc5y60iolaf" path="res://Rocky Roads/Objects/heart.png" id="4_phbb0"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_o2qcr"]
 atlas = ExtResource("2_vmx0i")
@@ -185,8 +187,9 @@ animation = &"idle"
 frame_progress = 0.630448
 
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(-57, 90)
+position = Vector2(-85, 90)
 zoom = Vector2(4, 2)
+script = ExtResource("3_fg2l3")
 
 [node name="Panel" type="Panel" parent="Camera2D"]
 offset_left = -137.0
@@ -200,6 +203,30 @@ position = Vector2(-119.125, -143.75)
 scale = Vector2(2.01562, 2.28125)
 texture = ExtResource("3_qswe7")
 hframes = 8
+
+[node name="corazon1" type="Sprite2D" parent="Camera2D"]
+position = Vector2(119, -146)
+scale = Vector2(2.01562, 2.28125)
+texture = ExtResource("4_phbb0")
+hframes = 3
+
+[node name="corazon2" type="Sprite2D" parent="Camera2D"]
+position = Vector2(92, -146)
+scale = Vector2(2.01562, 2.28125)
+texture = ExtResource("4_phbb0")
+hframes = 3
+
+[node name="corazon3" type="Sprite2D" parent="Camera2D"]
+position = Vector2(64, -146)
+scale = Vector2(2.01562, 2.28125)
+texture = ExtResource("4_phbb0")
+hframes = 3
+
+[node name="corazon4" type="Sprite2D" parent="Camera2D"]
+position = Vector2(37, -146)
+scale = Vector2(2.01562, 2.28125)
+texture = ExtResource("4_phbb0")
+hframes = 3
 
 [node name="Label" type="Label" parent="Camera2D"]
 offset_left = -102.0
