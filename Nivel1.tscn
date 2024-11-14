@@ -819,13 +819,6 @@ script = ExtResource("12_r28so")
 position = Vector2(6, -14)
 shape = SubResource("SegmentShape2D_psx1q")
 
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
-position = Vector2(1149, -11)
-stream = ExtResource("15_lw2gd")
-volume_db = -8.0
-pitch_scale = 0.99
-autoplay = true
-
 [node name="LogWall" type="Sprite2D" parent="."]
 position = Vector2(2360, 77.5)
 scale = Vector2(1, 1.22917)
@@ -835,6 +828,11 @@ texture = ExtResource("10_mrwkk")
 position = Vector2(2360, 35.5)
 scale = Vector2(1, 1.14583)
 texture = ExtResource("10_mrwkk")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("15_lw2gd")
+volume_db = -8.0
+autoplay = true
 
 [connection signal="body_entered" from="enemy2/eliminar" to="enemy2" method="_on_eliminar_body_entered"]
 [connection signal="body_entered" from="enemy2/dead" to="enemy2" method="_on_dead_body_entered"]
