@@ -18,10 +18,13 @@ func corazones_ui(vida):
 		get_tree().reload_current_scene()
 	if vida == 1:
 		heart2.visible=false
+		heart1.visible=true
 	if vida == 2:
 		heart3.visible=false
+		heart2.visible=true
 	if vida == 3:
 		heart4.visible=false
+		heart3.visible=true
 	if vida == 4:
 		heart4.visible=true
 
