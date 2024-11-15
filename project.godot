@@ -11,13 +11,17 @@ config_version=5
 [application]
 
 config/name="Prueba_1"
-run/main_scene="res://Menu.tscn"
+run/main_scene="res://Nivel1.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
 config/icon="res://icon.svg"
 
 [display]
 
 window/size/viewport_height=700
+
+[global_group]
+
+Finn=""
 
 [rendering]
 

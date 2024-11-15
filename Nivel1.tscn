@@ -1,4 +1,4 @@
-[gd_scene load_steps=93 format=4 uid="uid://csvi8rirhvkb1"]
+[gd_scene load_steps=94 format=4 uid="uid://csvi8rirhvkb1"]
 
 [ext_resource type="Texture2D" uid="uid://bhq6fq2xgp6pt" path="res://Rocky Roads/Deco/water_a_8frames.png" id="1_vklu4"]
 [ext_resource type="Texture2D" uid="uid://cldvjofhmfhd1" path="res://Rocky Roads/Backgrounds/mountains_b.png" id="2_j4yld"]
@@ -26,6 +26,7 @@
 [ext_resource type="Texture2D" uid="uid://copvduqt2v61a" path="res://Rocky Roads/Objects/flag.png" id="19_a1261"]
 [ext_resource type="PackedScene" uid="uid://p5nlaaae2n36" path="res://vida.tscn" id="25_oubhi"]
 [ext_resource type="PackedScene" uid="uid://c3bpklewu67kv" path="res://brake_block.tscn" id="26_4eenx"]
+[ext_resource type="PackedScene" uid="uid://bq78jkpbvh7w3" path="res://canon.tscn" id="27_fb54h"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_n0vrd"]
 atlas = ExtResource("5_3rmkb")
@@ -404,8 +405,8 @@ b = Vector2(2523, 50)
 [node name="Nivel_1" type="Node2D"]
 
 [node name="Sky" type="Sprite2D" parent="."]
-position = Vector2(494, -184.75)
-scale = Vector2(4.90625, 16.3281)
+position = Vector2(467.5, -184.75)
+scale = Vector2(5.11328, 16.3281)
 texture = ExtResource("1_vklu4")
 
 [node name="Sky2" type="Sprite2D" parent="."]
@@ -424,8 +425,8 @@ scale = Vector2(1.88672, 2.14063)
 texture = ExtResource("2_j4yld")
 
 [node name="Background" type="Sprite2D" parent="."]
-position = Vector2(493.5, 16.5)
-scale = Vector2(4.91016, 3.02344)
+position = Vector2(466.5, 16.5)
+scale = Vector2(5.1211, 3.02344)
 texture = ExtResource("3_3rv3h")
 
 [node name="Background2" type="Sprite2D" parent="."]
@@ -434,8 +435,8 @@ scale = Vector2(6.48242, 3.02344)
 texture = ExtResource("3_3rv3h")
 
 [node name="Water" type="Sprite2D" parent="."]
-position = Vector2(493.75, 269.75)
-scale = Vector2(4.9082, 5.42188)
+position = Vector2(466.5, 269.75)
+scale = Vector2(5.12109, 5.42188)
 texture = ExtResource("1_vklu4")
 
 [node name="Water2" type="Sprite2D" parent="."]
@@ -801,15 +802,21 @@ position = Vector2(2071, 41)
 position = Vector2(2251, 73)
 
 [node name="Coin15" parent="." instance=ExtResource("13_lxr7u")]
-position = Vector2(2384, -101)
+position = Vector2(2314, -102)
 
 [node name="Coin16" parent="." instance=ExtResource("13_lxr7u")]
-position = Vector2(2469, -100)
+position = Vector2(2490, -102)
 
 [node name="Coin18" parent="." instance=ExtResource("13_lxr7u")]
 position = Vector2(1907, -87)
 
-[node name="Finn" parent="." instance=ExtResource("12_m6dlt")]
+[node name="Coin19" parent="." instance=ExtResource("13_lxr7u")]
+position = Vector2(2406, -164)
+
+[node name="brake_block2" parent="." instance=ExtResource("26_4eenx")]
+position = Vector2(2390, -125)
+
+[node name="Finn" parent="." groups=["Finn"] instance=ExtResource("12_m6dlt")]
 
 [node name="Area2D" type="Area2D" parent="."]
 position = Vector2(149, 180)
@@ -833,6 +840,8 @@ texture = ExtResource("10_mrwkk")
 stream = ExtResource("15_lw2gd")
 volume_db = -8.0
 autoplay = true
+
+[node name="canon" parent="." instance=ExtResource("27_fb54h")]
 
 [connection signal="body_entered" from="enemy2/eliminar" to="enemy2" method="_on_eliminar_body_entered"]
 [connection signal="body_entered" from="enemy2/dead" to="enemy2" method="_on_dead_body_entered"]

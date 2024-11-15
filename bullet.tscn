@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://b6necis3lk10b"]
+
+[ext_resource type="Script" path="res://bullet.gd" id="1_3j5pp"]
+[ext_resource type="Texture2D" uid="uid://dhh5itm3f766l" path="res://Rocky Roads/Enemies/bullet.png" id="2_q4xy8"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_pmt53"]
+radius = 4.99998
+height = 15.9999
+
+[node name="bullet" type="Area2D"]
+script = ExtResource("1_3j5pp")
+
+[node name="canonbullet" type="Sprite2D" parent="."]
+texture = ExtResource("2_q4xy8")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(2, 3)
+rotation = -1.57369
+shape = SubResource("CapsuleShape2D_pmt53")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
