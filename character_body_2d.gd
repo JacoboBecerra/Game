@@ -32,6 +32,7 @@ func disminuir_vida(enemypos):
 	
 	velocity.y = -400
 	
+	$AnimatedSprite2D.play("hurt")
 	$AudioStreamPlayer2D.play()
 	
 	vida = vida - 1
@@ -39,7 +40,10 @@ func disminuir_vida(enemypos):
 	
 	camara2D.corazones_ui(vida)
 
-
+func trampolin():
+	velocity.y = -750
+	$trampolin.play()
+	
 
 
 func incrementar_vida():
@@ -63,8 +67,8 @@ func _process(delta: float) -> void:
 	#if vida==4:
 	#	get_tree().change_scene_to_file("res://Nivel_2.tscn")
 	
-	if monedas==19 and nivel == 1:
-		get_tree().change_scene_to_file("res://Nivel_2.tscn")
+	if monedas==20 and nivel == 1:
+		get_tree().change_scene_to_file("res://Nivel2.tscn")
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.

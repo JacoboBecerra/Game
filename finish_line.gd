@@ -12,5 +12,6 @@ func _process(delta: float) -> void:
 
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
-	body.incrementar_nivel()
+	if body.get_name() == "Finn":
+		body.incrementar_nivel()
 	

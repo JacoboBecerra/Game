@@ -1,4 +1,4 @@
-[gd_scene load_steps=41 format=4 uid="uid://0fho0xwvfn2c"]
+[gd_scene load_steps=34 format=4 uid="uid://0fho0xwvfn2c"]
 
 [ext_resource type="Texture2D" uid="uid://diu17it0qay7j" path="res://Rocky Roads/Backgrounds/desert_a.png" id="1_bj84y"]
 [ext_resource type="Texture2D" uid="uid://bprs7jr45cibe" path="res://Rocky Roads/Backgrounds/clouds.png" id="2_e4vxq"]
@@ -11,10 +11,8 @@
 [ext_resource type="Texture2D" uid="uid://c7cepsna4nn5x" path="res://Rocky Roads/Tilesets/tileset_desert.png" id="9_xsi5v"]
 [ext_resource type="PackedScene" uid="uid://c30eiyjcun7gx" path="res://finn.tscn" id="10_78yl5"]
 [ext_resource type="Script" path="res://ZonaCaida.gd" id="12_o37c3"]
-[ext_resource type="Script" path="res://canon.gd" id="13_qghgh"]
+[ext_resource type="PackedScene" uid="uid://bq78jkpbvh7w3" path="res://canon.tscn" id="13_dacpq"]
 [ext_resource type="PackedScene" uid="uid://c2kyfoudbbmqu" path="res://coin.tscn" id="14_ofir8"]
-[ext_resource type="PackedScene" uid="uid://b6necis3lk10b" path="res://bullet.tscn" id="14_y1x04"]
-[ext_resource type="Texture2D" uid="uid://bgbrknjg42bde" path="res://Rocky Roads/Enemies/cannon.png" id="15_bfaur"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_n0vrd"]
 atlas = ExtResource("5_6r0om")
@@ -163,38 +161,6 @@ size = Vector2(80, 13)
 a = Vector2(-210, -31)
 b = Vector2(499, -29)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_v0ufh"]
-atlas = ExtResource("15_bfaur")
-region = Rect2(0, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_7hlsm"]
-atlas = ExtResource("15_bfaur")
-region = Rect2(32, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_v6hgw"]
-atlas = ExtResource("15_bfaur")
-region = Rect2(64, 0, 32, 32)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_45nu5"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_v0ufh")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_7hlsm")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_v6hgw")
-}],
-"loop": true,
-"name": &"idle",
-"speed": 3.0
-}]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_rs5pc"]
-size = Vector2(14, 19)
-
 [node name="Nivel_2" type="Node2D"]
 
 [node name="Sky" type="Sprite2D" parent="."]
@@ -276,31 +242,9 @@ position = Vector2(6, -14)
 shape = SubResource("SegmentShape2D_psx1q")
 
 [node name="Coin" parent="." instance=ExtResource("14_ofir8")]
-position = Vector2(254, 37)
+position = Vector2(154, 35)
 
-[node name="canon" type="StaticBody2D" parent="."]
-position = Vector2(230, 58)
-script = ExtResource("13_qghgh")
-bullet = ExtResource("14_y1x04")
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="canon"]
-sprite_frames = SubResource("SpriteFrames_45nu5")
-animation = &"idle"
-frame = 1
-frame_progress = 0.722273
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="canon"]
-position = Vector2(-1, 6.5)
-shape = SubResource("RectangleShape2D_rs5pc")
-
-[node name="RayCast2D" type="RayCast2D" parent="canon"]
-position = Vector2(-1, 6)
-target_position = Vector2(-50, 0)
-
-[node name="spawbullet" type="Marker2D" parent="canon"]
-position = Vector2(-15, 4)
-
-[node name="Timer" type="Timer" parent="canon"]
+[node name="canon" parent="." instance=ExtResource("13_dacpq")]
+position = Vector2(224, 58)
 
 [connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
-[connection signal="timeout" from="canon/Timer" to="canon" method="_on_timer_timeout"]

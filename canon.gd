@@ -6,7 +6,7 @@ var puedodisparar:bool = true
 
 
 func _ready() -> void:
-	pass
+	$AnimatedSprite2D.play("idle")
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -15,6 +15,7 @@ func _process(delta: float) -> void:
 		var obj = $RayCast2D.get_collider()
 		if obj.is_in_group("Finn") and puedodisparar:
 			puedodisparar = false
+			$AudioStreamPlayer2D.play()
 			$Timer.start()
 			shoot()
 

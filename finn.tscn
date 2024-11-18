@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=3 uid="uid://c30eiyjcun7gx"]
+[gd_scene load_steps=37 format=3 uid="uid://c30eiyjcun7gx"]
 
 [ext_resource type="Script" path="res://character_body_2d.gd" id="1_ll52t"]
 [ext_resource type="Texture2D" uid="uid://do18814hsc8uk" path="res://character/FinnSprite.png" id="2_vmx0i"]
@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://bslc5y60iolaf" path="res://Rocky Roads/Objects/heart.png" id="4_phbb0"]
 [ext_resource type="AudioStream" uid="uid://bom13kgfwp7c7" path="res://Music/Sounds/male_hurt7-48124.mp3" id="7_7rpxc"]
 [ext_resource type="AudioStream" uid="uid://dbkbho7ar5wxi" path="res://Music/Sounds/enemy1death.mp3" id="8_bacjr"]
+[ext_resource type="AudioStream" uid="uid://bqnqxuurots65" path="res://Music/Sounds/boing.mp3" id="9_4yud1"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_mrfmy"]
 atlas = ExtResource("2_vmx0i")
@@ -279,7 +280,7 @@ offset_bottom = -123.0
 text = "0"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-124, 111.5)
+position = Vector2(-123, 111.5)
 shape = SubResource("RectangleShape2D_f0hwr")
 
 [node name="jump" type="AudioStreamPlayer2D" parent="."]
@@ -292,3 +293,7 @@ stream = ExtResource("7_7rpxc")
 [node name="enemy_death" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("8_bacjr")
 volume_db = 2.0
+
+[node name="trampolin" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("9_4yud1")
+volume_db = 6.047

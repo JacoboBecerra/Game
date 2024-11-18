@@ -1,8 +1,13 @@
-[gd_scene load_steps=9 format=3 uid="uid://bq78jkpbvh7w3"]
+[gd_scene load_steps=11 format=3 uid="uid://bq78jkpbvh7w3"]
 
 [ext_resource type="Script" path="res://canon.gd" id="1_j8cjp"]
 [ext_resource type="PackedScene" uid="uid://b6necis3lk10b" path="res://bullet.tscn" id="2_ijgqi"]
 [ext_resource type="Texture2D" uid="uid://bgbrknjg42bde" path="res://Rocky Roads/Enemies/cannon.png" id="3_qgitd"]
+[ext_resource type="AudioStream" uid="uid://cv8wvgdr2kl1s" path="res://Music/Sounds/cannon-fire.mp3" id="4_3x2xq"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6u3o4"]
+atlas = ExtResource("3_qgitd")
+region = Rect2(0, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_v0ufh"]
 atlas = ExtResource("3_qgitd")
@@ -20,6 +25,14 @@ region = Rect2(64, 0, 32, 32)
 animations = [{
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_6u3o4")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_v0ufh")
 }, {
 "duration": 1.0,
@@ -29,12 +42,12 @@ animations = [{
 "texture": SubResource("AtlasTexture_v6hgw")
 }],
 "loop": true,
-"name": &"idle",
-"speed": 3.0
+"name": &"shoot",
+"speed": 5.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0l7tx"]
-size = Vector2(14, 19)
+size = Vector2(27, 27)
 
 [node name="canon" type="StaticBody2D"]
 position = Vector2(199, 26)
@@ -42,21 +55,27 @@ script = ExtResource("1_j8cjp")
 bullet = ExtResource("2_ijgqi")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(11.5, -11)
+scale = Vector2(1.71875, 1.6875)
 sprite_frames = SubResource("SpriteFrames_sbyd7")
-animation = &"idle"
+animation = &"shoot"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-1, 6.5)
+position = Vector2(8.5, 3.5)
 shape = SubResource("RectangleShape2D_0l7tx")
 
 [node name="RayCast2D" type="RayCast2D" parent="."]
-position = Vector2(-1, 6)
-target_position = Vector2(-83, 0)
+position = Vector2(-5, -1)
+target_position = Vector2(-150, 0)
 
 [node name="spawbullet" type="Marker2D" parent="."]
-position = Vector2(-15, 4)
+position = Vector2(-13, -3)
 
 [node name="Timer" type="Timer" parent="."]
-wait_time = 1.5
+wait_time = 1.8
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_3x2xq")
+volume_db = -2.0
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
