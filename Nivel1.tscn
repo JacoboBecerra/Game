@@ -448,16 +448,6 @@ position = Vector2(1951.25, 17.5)
 scale = Vector2(6.48242, 3.02344)
 texture = ExtResource("3_3rv3h")
 
-[node name="Water" type="Sprite2D" parent="."]
-position = Vector2(466.5, 269.75)
-scale = Vector2(5.12109, 5.42188)
-texture = ExtResource("1_vklu4")
-
-[node name="Water2" type="Sprite2D" parent="."]
-position = Vector2(1955.38, 270)
-scale = Vector2(6.51267, 5.42188)
-texture = ExtResource("1_vklu4")
-
 [node name="Sun" type="Node2D" parent="."]
 position = Vector2(1205, 247)
 script = ExtResource("4_ss1rq")
@@ -586,6 +576,7 @@ position = Vector2(1564.5, 196.5)
 shape = SubResource("RectangleShape2D_a2wg4")
 
 [node name="Enemy" parent="." instance=ExtResource("9_skks4")]
+position = Vector2(692, -75)
 
 [node name="enemy2" type="CharacterBody2D" parent="."]
 position = Vector2(1934, 57)
@@ -862,6 +853,16 @@ texture = ExtResource("10_mrwkk")
 position = Vector2(2360, 7.5)
 scale = Vector2(1, 1.14583)
 texture = ExtResource("10_mrwkk")
+
+[node name="Water" type="Sprite2D" parent="."]
+position = Vector2(466.5, 269.75)
+scale = Vector2(5.12109, 5.42188)
+texture = ExtResource("1_vklu4")
+
+[node name="Water2" type="Sprite2D" parent="."]
+position = Vector2(1955.38, 270)
+scale = Vector2(6.51267, 5.42188)
+texture = ExtResource("1_vklu4")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("15_lw2gd")
