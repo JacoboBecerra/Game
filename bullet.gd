@@ -11,3 +11,4 @@ func _process(delta: float) -> void:
 func _on_body_entered(body: Node2D) -> void:
 	if body.get_name() == "Finn":
 		body.disminuir_vida(position.x)
+		queue_free()
