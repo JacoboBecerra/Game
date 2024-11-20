@@ -69,11 +69,11 @@ func _process(delta: float) -> void:
 	
 	#if vida==4:
 	#	get_tree().change_scene_to_file("res://Nivel_2.tscn")
-	
-	if monedas==20 and nivel == 1:
-		get_tree().change_scene_to_file("res://Nivel2.tscn")
-	if monedas==20 and nivel == 2:
-		get_tree().change_scene_to_file("res://Nivel1.tscn")
+	if monedas>=20:
+		if nivel == 1:
+			get_tree().change_scene_to_file("res://Nivel2.tscn")
+		if nivel == 2:
+			get_tree().change_scene_to_file("res://Nivel1.tscn")
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
