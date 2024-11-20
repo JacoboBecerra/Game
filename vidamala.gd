@@ -1,4 +1,4 @@
-extends Node2D
+extends Area2D
 
 
 # Called when the node enters the scene tree for the first time.
@@ -11,10 +11,7 @@ func _process(delta: float) -> void:
 	pass
 
 
-func _on_area_2d_body_entered(body: Node2D) -> void:
-	if body.name == "Finn":
-		visible=false
-		$AudioStreamPlayer2D.play()
-		body.incrementar_vida()
-		await get_tree().create_timer(0.5).timeout
+func _on_body_entered(body: Node2D) -> void:
+	if body.get_name() == "Finn":
+		body.disminuir_vida(position.x)
 		queue_free()

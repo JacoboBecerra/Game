@@ -209,7 +209,7 @@ corner_radius_bottom_right = 15
 corner_radius_bottom_left = 15
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_f0hwr"]
-size = Vector2(18, 35)
+size = Vector2(17, 35)
 
 [node name="Finn" type="CharacterBody2D"]
 position = Vector2(206, -86)
@@ -280,7 +280,7 @@ offset_bottom = -123.0
 text = "0"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-123, 111.5)
+position = Vector2(-123.5, 111.5)
 shape = SubResource("RectangleShape2D_f0hwr")
 
 [node name="jump" type="AudioStreamPlayer2D" parent="."]

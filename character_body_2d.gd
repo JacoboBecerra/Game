@@ -53,6 +53,9 @@ func incrementar_vida():
 
 func incrementar_nivel():
 	nivel = 1
+	
+func incrementar_nivel2():
+	nivel = 2
 
 func disminuir_nivel():
 	nivel = 0
@@ -69,6 +72,8 @@ func _process(delta: float) -> void:
 	
 	if monedas==20 and nivel == 1:
 		get_tree().change_scene_to_file("res://Nivel2.tscn")
+	if monedas==20 and nivel == 2:
+		get_tree().change_scene_to_file("res://Nivel1.tscn")
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.

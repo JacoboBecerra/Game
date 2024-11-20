@@ -1,4 +1,4 @@
-[gd_scene load_steps=96 format=4 uid="uid://csvi8rirhvkb1"]
+[gd_scene load_steps=95 format=4 uid="uid://csvi8rirhvkb1"]
 
 [ext_resource type="Texture2D" uid="uid://bhq6fq2xgp6pt" path="res://Rocky Roads/Deco/water_a_8frames.png" id="1_vklu4"]
 [ext_resource type="Texture2D" uid="uid://cldvjofhmfhd1" path="res://Rocky Roads/Backgrounds/mountains_b.png" id="2_j4yld"]
@@ -14,7 +14,7 @@
 [ext_resource type="Script" path="res://platform.gd" id="11_e4xie"]
 [ext_resource type="PackedScene" uid="uid://c30eiyjcun7gx" path="res://finn.tscn" id="12_m6dlt"]
 [ext_resource type="Script" path="res://ZonaCaida.gd" id="12_r28so"]
-[ext_resource type="Texture2D" uid="uid://ckqk7tsjsuy24" path="res://Rocky Roads/Enemies/bear_brown.png" id="12_soswe"]
+[ext_resource type="Texture2D" uid="uid://bpv5knw5f81r8" path="res://Rocky Roads/Enemies/slime_green.png" id="13_865n4"]
 [ext_resource type="PackedScene" uid="uid://c2kyfoudbbmqu" path="res://coin.tscn" id="13_lxr7u"]
 [ext_resource type="Script" path="res://platform_2.gd" id="14_jrpp6"]
 [ext_resource type="Script" path="res://aguaMuerte.gd" id="14_tbtb1"]
@@ -26,7 +26,6 @@
 [ext_resource type="Texture2D" uid="uid://copvduqt2v61a" path="res://Rocky Roads/Objects/flag.png" id="19_a1261"]
 [ext_resource type="PackedScene" uid="uid://p5nlaaae2n36" path="res://vida.tscn" id="25_oubhi"]
 [ext_resource type="PackedScene" uid="uid://c3bpklewu67kv" path="res://brake_block.tscn" id="26_4eenx"]
-[ext_resource type="PackedScene" uid="uid://bq78jkpbvh7w3" path="res://canon.tscn" id="27_fb54h"]
 [ext_resource type="PackedScene" uid="uid://d0ol0nghtuae1" path="res://trampolin.tscn" id="28_bm0hh"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_n0vrd"]
@@ -263,36 +262,36 @@ b = Vector2(1, 170)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_a2wg4"]
 size = Vector2(19, 21)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_ukufs"]
-atlas = ExtResource("12_soswe")
-region = Rect2(0, 32, 32, 32)
+[sub_resource type="AtlasTexture" id="AtlasTexture_5ts7c"]
+atlas = ExtResource("13_865n4")
+region = Rect2(0, 24, 24, 24)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_tmmvk"]
-atlas = ExtResource("12_soswe")
-region = Rect2(32, 32, 32, 32)
+[sub_resource type="AtlasTexture" id="AtlasTexture_3vevc"]
+atlas = ExtResource("13_865n4")
+region = Rect2(24, 24, 24, 24)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_a6qfa"]
-atlas = ExtResource("12_soswe")
-region = Rect2(64, 32, 32, 32)
+[sub_resource type="AtlasTexture" id="AtlasTexture_jeckw"]
+atlas = ExtResource("13_865n4")
+region = Rect2(48, 24, 24, 24)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_d8uts"]
-atlas = ExtResource("12_soswe")
-region = Rect2(96, 32, 32, 32)
+[sub_resource type="AtlasTexture" id="AtlasTexture_d3uor"]
+atlas = ExtResource("13_865n4")
+region = Rect2(72, 24, 24, 24)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_7os2y"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_ukufs")
+"texture": SubResource("AtlasTexture_5ts7c")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_tmmvk")
+"texture": SubResource("AtlasTexture_3vevc")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_a6qfa")
+"texture": SubResource("AtlasTexture_jeckw")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_d8uts")
+"texture": SubResource("AtlasTexture_d3uor")
 }],
 "loop": true,
 "name": &"walk",
@@ -300,13 +299,13 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_regv2"]
-size = Vector2(23, 13)
+size = Vector2(22, 15)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_snue2"]
-size = Vector2(27, 10.5)
+size = Vector2(26, 10.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_74hgd"]
-size = Vector2(19, 4)
+size = Vector2(20, 10.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3qu00"]
 size = Vector2(32, 14)
@@ -583,25 +582,26 @@ position = Vector2(1934, 57)
 script = ExtResource("17_y3c3y")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="enemy2"]
-position = Vector2(-1, 0)
+position = Vector2(3.00001, -8)
+scale = Vector2(1.875, 1.95833)
 sprite_frames = SubResource("SpriteFrames_7os2y")
 animation = &"walk"
 frame_progress = 0.298966
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="enemy2"]
-position = Vector2(0.5, 8.5)
+position = Vector2(3, 7.5)
 shape = SubResource("RectangleShape2D_regv2")
 
 [node name="eliminar" type="Area2D" parent="enemy2"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="enemy2/eliminar"]
-position = Vector2(0.5, 10.25)
+position = Vector2(3, 10.25)
 shape = SubResource("RectangleShape2D_snue2")
 
 [node name="dead" type="Area2D" parent="enemy2"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="enemy2/dead"]
-position = Vector2(0.5, 1)
+position = Vector2(3, -2.75)
 shape = SubResource("RectangleShape2D_74hgd")
 
 [node name="platform" type="CharacterBody2D" parent="."]
@@ -621,7 +621,7 @@ vframes = 4
 frame = 22
 
 [node name="platform2" type="CharacterBody2D" parent="."]
-position = Vector2(1984, -47)
+position = Vector2(1997, -77)
 script = ExtResource("14_jrpp6")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="platform2"]
@@ -745,9 +745,6 @@ position = Vector2(0, -3)
 position = Vector2(1502, 90.5)
 shape = SubResource("RectangleShape2D_cxin4")
 
-[node name="canon" parent="." instance=ExtResource("27_fb54h")]
-position = Vector2(325, 417)
-
 [node name="finish_line" type="Node" parent="."]
 script = ExtResource("18_fs1ul")
 
@@ -804,10 +801,10 @@ position = Vector2(1649, 123)
 position = Vector2(1809, 75)
 
 [node name="Coin12" parent="." instance=ExtResource("13_lxr7u")]
-position = Vector2(1727, -121)
+position = Vector2(1726, -158)
 
 [node name="Coin17" parent="." instance=ExtResource("13_lxr7u")]
-position = Vector2(1547, -123)
+position = Vector2(1549, -159)
 
 [node name="Coin13" parent="." instance=ExtResource("13_lxr7u")]
 position = Vector2(2072, 11)
@@ -822,7 +819,7 @@ position = Vector2(2314, -134)
 position = Vector2(2490, -134)
 
 [node name="Coin18" parent="." instance=ExtResource("13_lxr7u")]
-position = Vector2(1898, -120)
+position = Vector2(1899, -157)
 
 [node name="Coin19" parent="." instance=ExtResource("13_lxr7u")]
 position = Vector2(2406, -191)
