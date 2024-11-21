@@ -1,4 +1,4 @@
-[gd_scene load_steps=37 format=3 uid="uid://c30eiyjcun7gx"]
+[gd_scene load_steps=38 format=3 uid="uid://c30eiyjcun7gx"]
 
 [ext_resource type="Script" path="res://character_body_2d.gd" id="1_ll52t"]
 [ext_resource type="Texture2D" uid="uid://do18814hsc8uk" path="res://character/FinnSprite.png" id="2_vmx0i"]
@@ -9,6 +9,7 @@
 [ext_resource type="AudioStream" uid="uid://bom13kgfwp7c7" path="res://Music/Sounds/male_hurt7-48124.mp3" id="7_7rpxc"]
 [ext_resource type="AudioStream" uid="uid://dbkbho7ar5wxi" path="res://Music/Sounds/enemy1death.mp3" id="8_bacjr"]
 [ext_resource type="AudioStream" uid="uid://bqnqxuurots65" path="res://Music/Sounds/boing.mp3" id="9_4yud1"]
+[ext_resource type="AudioStream" uid="uid://d171alhlgdjkn" path="res://Music/Sounds/coin-257878.mp3" id="10_wtwpv"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_mrfmy"]
 atlas = ExtResource("2_vmx0i")
@@ -298,3 +299,7 @@ volume_db = 5.0
 [node name="trampolin" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("9_4yud1")
 volume_db = 15.0
+
+[node name="coin" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("10_wtwpv")
+volume_db = 10.0

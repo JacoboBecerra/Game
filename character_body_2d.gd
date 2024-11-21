@@ -61,6 +61,7 @@ func disminuir_nivel():
 	nivel = 0
 
 func incrementar_moneda():
+	$coin.play()
 	monedas = monedas + 1
 	print("Tienes " + str(monedas) + " monedas")
 	

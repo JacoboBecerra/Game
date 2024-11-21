@@ -14,10 +14,8 @@ func _process(delta: float) -> void:
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	if body.name == "Finn":
 		visible=false
-		$AudioStreamPlayer2D.play()
 		body.incrementar_moneda()
 		body.disminuir_nivel()
-		await get_tree().create_timer(0.45).timeout
 		queue_free()
 		
 

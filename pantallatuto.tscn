@@ -65,7 +65,7 @@ text = "Cada nivel cuenta con 20 monedas. El objetivo es recorrer el mapa,
 buscarlas y coleccionarlas todas para poder acceder a la siguiente 
 pantalla.
 Además, deberás estar atento ya que hay objetos ocultos que te 
-ayudaran con tu aventura"
+ayudaran con tu aventura."
 
 [node name="Label2" type="Label" parent="."]
 texture_filter = 2

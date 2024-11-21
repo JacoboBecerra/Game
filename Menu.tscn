@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://8p84d00358gm"]
+[gd_scene load_steps=24 format=3 uid="uid://8p84d00358gm"]
 
 [ext_resource type="Script" path="res://menu.gd" id="1_0c3b0"]
 [ext_resource type="Texture2D" uid="uid://bhq6fq2xgp6pt" path="res://Rocky Roads/Deco/water_a_8frames.png" id="2_8ane2"]
@@ -98,12 +98,6 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tco3t"]
-bg_color = Color(0.890196, 0.917647, 0.992157, 0.4)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_j4kvw"]
-bg_color = Color(0.890196, 0.917647, 0.992157, 0.4)
-
 [node name="Menu" type="Control"]
 layout_mode = 3
 anchors_preset = 15
@@ -194,16 +188,18 @@ grow_vertical = 2
 
 [node name="Start_game" type="Button" parent="VBoxContainer"]
 layout_mode = 2
-theme_override_styles/focus = SubResource("StyleBoxFlat_tco3t")
-text = "Start Game"
+text = "Start game"
 
 [node name="tutorial" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 text = "Tutorial"
 
+[node name="Settings" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Settings"
+
 [node name="Quit" type="Button" parent="VBoxContainer"]
 layout_mode = 2
-theme_override_styles/focus = SubResource("StyleBoxFlat_j4kvw")
 text = "Quit"
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
