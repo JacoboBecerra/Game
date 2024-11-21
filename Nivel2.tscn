@@ -1,4 +1,4 @@
-[gd_scene load_steps=131 format=4 uid="uid://xv058tjovefa"]
+[gd_scene load_steps=140 format=4 uid="uid://xv058tjovefa"]
 
 [ext_resource type="Texture2D" uid="uid://diu17it0qay7j" path="res://Rocky Roads/Backgrounds/desert_a.png" id="1_p3moo"]
 [ext_resource type="Texture2D" uid="uid://bprs7jr45cibe" path="res://Rocky Roads/Backgrounds/clouds.png" id="2_p061o"]
@@ -32,8 +32,11 @@
 [ext_resource type="AudioStream" uid="uid://b7txo0fn7mvdd" path="res://Music/Music/country-level2.mp3" id="30_po2qd"]
 [ext_resource type="PackedScene" uid="uid://doknuydoapvpg" path="res://canonturn.tscn" id="32_xij3h"]
 [ext_resource type="Script" path="res://finishline_2.gd" id="34_mu2bl"]
+[ext_resource type="Script" path="res://boton.gd" id="35_72j3g"]
+[ext_resource type="Texture2D" uid="uid://ct04ft1jr6ukm" path="res://Rocky Roads/Objects/button.png" id="36_cldf0"]
 [ext_resource type="Script" path="res://huevodepascua.gd" id="36_u0ytu"]
 [ext_resource type="Texture2D" uid="uid://556i1r7te72g" path="res://Rocky Roads/Objects/key.png" id="37_rrrap"]
+[ext_resource type="AudioStream" uid="uid://dl58oj8j602dj" path="res://Music/Sounds/old-radio-button-click-97549.mp3" id="37_sd0o5"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_n0vrd"]
 atlas = ExtResource("5_yy6oy")
@@ -258,7 +261,7 @@ b = Vector2(1, 37)
 size = Vector2(29, 41)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xpt3k"]
-size = Vector2(28, 39)
+size = Vector2(392, 39)
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_d3v01"]
 a = Vector2(-443, 0)
@@ -609,6 +612,43 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_qc7ol"]
+a = Vector2(0, -61)
+b = Vector2(0, 19)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vrkpt"]
+size = Vector2(16.5, 4.5)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_urd3s"]
+atlas = ExtResource("36_cldf0")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k3p82"]
+atlas = ExtResource("36_cldf0")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_7fseo"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_urd3s")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k3p82")
+}],
+"loop": true,
+"name": &"pulse",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5br7n"]
+size = Vector2(23, 4.5)
+
 [node name="Nivel_1" type="Node2D"]
 
 [node name="DesertA" type="Sprite2D" parent="."]
@@ -889,7 +929,7 @@ position = Vector2(2184.5, 109.5)
 shape = SubResource("RectangleShape2D_hl0xe")
 
 [node name="CollisionShape2D46" type="CollisionShape2D" parent="Mapa_1"]
-position = Vector2(2680, 108.5)
+position = Vector2(2862, 108.5)
 shape = SubResource("RectangleShape2D_xpt3k")
 
 [node name="CollisionShape2D47" type="CollisionShape2D" parent="Mapa_1"]
@@ -1118,7 +1158,7 @@ position = Vector2(4081, -232)
 position = Vector2(1788, -140)
 
 [node name="Coin15" parent="." instance=ExtResource("24_wky7x")]
-position = Vector2(1529, 53)
+position = Vector2(3920, -232)
 
 [node name="Coin16" parent="." instance=ExtResource("24_wky7x")]
 position = Vector2(1783, -337)
@@ -1200,7 +1240,7 @@ texture = ExtResource("3_46qvg")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("30_po2qd")
-volume_db = -30.0
+volume_db = -22.0
 autoplay = true
 
 [node name="canonturn" parent="." instance=ExtResource("32_xij3h")]
@@ -1233,6 +1273,34 @@ sprite_frames = SubResource("SpriteFrames_cuqdf")
 animation = &"idle"
 frame_progress = 0.460183
 
+[node name="boton" type="StaticBody2D" parent="."]
+position = Vector2(1525, 79)
+script = ExtResource("35_72j3g")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="boton"]
+position = Vector2(841, -320)
+shape = SubResource("SegmentShape2D_qc7ol")
+
+[node name="Area2D" type="Area2D" parent="boton"]
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="boton/Area2D"]
+position = Vector2(3.25, 3.25)
+shape = SubResource("RectangleShape2D_vrkpt")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="boton"]
+position = Vector2(3.5, -2)
+scale = Vector2(1.4375, 1.5)
+sprite_frames = SubResource("SpriteFrames_7fseo")
+animation = &"idle"
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="boton"]
+position = Vector2(3.5, 7.75)
+shape = SubResource("RectangleShape2D_5br7n")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="boton"]
+stream = ExtResource("37_sd0o5")
+volume_db = 5.0
+
 [connection signal="body_entered" from="aguaMuerte/Area2D" to="aguaMuerte" method="_on_area_2d_body_entered"]
 [connection signal="body_entered" from="aguaMuerte2/Area2D" to="aguaMuerte2" method="_on_area_2d_body_entered"]
 [connection signal="body_entered" from="vidamala" to="vidamala" method="_on_body_entered"]
@@ -1247,3 +1315,4 @@ frame_progress = 0.460183
 [connection signal="body_entered" from="huevodepascua" to="huevodepascua" method="_on_body_entered"]
 [connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
 [connection signal="body_entered" from="finishline2" to="finishline2" method="_on_body_entered"]
+[connection signal="body_entered" from="boton/Area2D" to="boton" method="_on_area_2d_body_entered"]

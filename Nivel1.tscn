@@ -942,6 +942,7 @@ texture = ExtResource("1_vklu4")
 stream = ExtResource("15_lw2gd")
 volume_db = -5.0
 autoplay = true
+stream_paused = true
 
 [node name="trampolin" parent="." instance=ExtResource("28_bm0hh")]
 position = Vector2(1567, 169)
