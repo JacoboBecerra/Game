@@ -1,0 +1,88 @@
+[gd_scene load_steps=3 format=3 uid="uid://cat5jnlsind1c"]
+
+[ext_resource type="Script" path="res://pantallatuto.gd" id="1_jkrlf"]
+[ext_resource type="Texture2D" uid="uid://hmjhjfbovma2" path="res://Rocky Roads/Backgrounds/desert_b.png" id="2_ii54y"]
+
+[node name="pantallatuto" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_jkrlf")
+
+[node name="fondo" type="Sprite2D" parent="."]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(574.5, 349.5)
+scale = Vector2(4.54297, 5.49219)
+texture = ExtResource("2_ii54y")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+custom_minimum_size = Vector2(200, 250)
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -100.0
+offset_top = -139.0
+offset_right = 100.0
+offset_bottom = 111.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="Button" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 4
+text = "ok"
+
+[node name="Button2" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Back"
+
+[node name="CheckButton" type="CheckButton" parent="VBoxContainer"]
+layout_mode = 2
+text = "Acepto las condiciones"
+
+[node name="Label" type="Label" parent="."]
+texture_filter = 2
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -520.0
+offset_top = -289.0
+offset_right = 22.0
+offset_bottom = -162.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(2, 2)
+text = "Cada nivel cuenta con 20 monedas. El objetivo es recorrer el mapa,
+buscarlas y coleccionarlas todas para poder acceder a la siguiente 
+pantalla.
+Además, deberás estar atento ya que hay objetos ocultos que te 
+ayudaran con tu aventura"
+
+[node name="Label2" type="Label" parent="."]
+texture_filter = 2
+layout_mode = 0
+offset_left = 228.0
+offset_top = 385.0
+offset_right = 987.0
+offset_bottom = 512.0
+text = "CONDICIONES DE USO:
+1.- El juego está destinado exclusivamente para uso personal y no comercial.
+2.- Queda prohibida la distribución, modificación o uso no autorizado del software.
+3.- Los usuarios aceptan no emplear hacks, trampas o exploits que afecten la experiencia.
+4.- La empresa no se responsabiliza por la pérdida de progreso debido a fallos técnicos.
+5.- Al utilizar el juego, aceptas cumplir con estas condiciones y las actualizaciones futuras."
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+
+[connection signal="pressed" from="VBoxContainer/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/Button2" to="." method="_on_button_2_pressed"]
+[connection signal="pressed" from="VBoxContainer/CheckButton" to="." method="_on_check_button_pressed"]

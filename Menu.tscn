@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://8p84d00358gm"]
+[gd_scene load_steps=26 format=3 uid="uid://8p84d00358gm"]
 
 [ext_resource type="Script" path="res://menu.gd" id="1_0c3b0"]
 [ext_resource type="Texture2D" uid="uid://bhq6fq2xgp6pt" path="res://Rocky Roads/Deco/water_a_8frames.png" id="2_8ane2"]
@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://8tno7wj4p7nk" path="res://Rocky Roads/Deco/clouds.png" id="9_a37rs"]
 [ext_resource type="Texture2D" uid="uid://cw0dyjhlbkd5j" path="res://Rocky Roads/Enemies/crab.png" id="10_mllpu"]
 [ext_resource type="AudioStream" uid="uid://cr851nv8lwe4c" path="res://Music/Music/The Fall of Arcana.mp3" id="10_ntriy"]
+[ext_resource type="Texture2D" uid="uid://dhi0575r5uksj" path="res://Rocky Roads/UI/title.png" id="11_vyeep"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_84cwa"]
 atlas = ExtResource("3_ib31g")
@@ -196,6 +197,10 @@ layout_mode = 2
 theme_override_styles/focus = SubResource("StyleBoxFlat_tco3t")
 text = "Start Game"
 
+[node name="tutorial" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Tutorial"
+
 [node name="Quit" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 theme_override_styles/focus = SubResource("StyleBoxFlat_j4kvw")
@@ -205,5 +210,11 @@ text = "Quit"
 stream = ExtResource("10_ntriy")
 autoplay = true
 
+[node name="Title" type="Sprite2D" parent="."]
+position = Vector2(579.969, 264.5)
+scale = Vector2(0.31365, 0.413636)
+texture = ExtResource("11_vyeep")
+
 [connection signal="pressed" from="VBoxContainer/Start_game" to="." method="_on_start_game_pressed"]
+[connection signal="pressed" from="VBoxContainer/tutorial" to="." method="_on_tutorial_pressed"]
 [connection signal="pressed" from="VBoxContainer/Quit" to="." method="_on_quit_pressed"]

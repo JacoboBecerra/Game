@@ -865,7 +865,7 @@ texture = ExtResource("1_vklu4")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("15_lw2gd")
-volume_db = -8.0
+volume_db = -5.0
 autoplay = true
 
 [node name="trampolin" parent="." instance=ExtResource("28_bm0hh")]
