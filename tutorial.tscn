@@ -330,7 +330,6 @@ editable = false
 [node name="boton" type="StaticBody2D" parent="."]
 position = Vector2(2818, 104)
 rotation = -3.13859
-scale = Vector2(1, 1)
 script = ExtResource("11_krrfp")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="boton"]

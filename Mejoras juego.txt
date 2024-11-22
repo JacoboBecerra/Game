@@ -1,0 +1,15 @@
+Mejoras juego
+
+2.- Mejoras las colisiones del mapa (medio)
+3.- Añadir las texturas a la tierra (bajo)
+4.- Volumen (importante)
+
+
+añadir un botón que abra una puerta
+
+
+menú de pausa
+settings de volumen y dificultad(num corazones)
+enemigo que te dispare balas que persiguen
+hacer que fin pegue un espadazo y se proteja de las balas
+ApiRest

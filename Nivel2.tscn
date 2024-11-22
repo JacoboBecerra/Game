@@ -1181,8 +1181,8 @@ position = Vector2(175, -300)
 [node name="brake_block4" parent="." instance=ExtResource("23_n7sqo")]
 position = Vector2(3568, -265)
 
-[node name="Finn" parent="." groups=["Finn"] instance=ExtResource("25_yhg5x")]
-position = Vector2(216, -88)
+[node name="Finn" parent="." instance=ExtResource("25_yhg5x")]
+position = Vector2(103, 28)
 
 [node name="pinchofalso" type="Area2D" parent="."]
 position = Vector2(-278, -239)

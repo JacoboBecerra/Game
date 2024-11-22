@@ -908,7 +908,8 @@ position = Vector2(2390, -154)
 [node name="brake_block3" parent="." instance=ExtResource("26_4eenx")]
 position = Vector2(170, -13)
 
-[node name="Finn" parent="." groups=["Finn"] instance=ExtResource("12_m6dlt")]
+[node name="Finn" parent="." instance=ExtResource("12_m6dlt")]
+position = Vector2(43, 27)
 
 [node name="Area2D" type="Area2D" parent="."]
 position = Vector2(149, 180)
@@ -942,7 +943,6 @@ texture = ExtResource("1_vklu4")
 stream = ExtResource("15_lw2gd")
 volume_db = -5.0
 autoplay = true
-stream_paused = true
 
 [node name="trampolin" parent="." instance=ExtResource("28_bm0hh")]
 position = Vector2(1567, 169)

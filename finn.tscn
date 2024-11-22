@@ -210,14 +210,14 @@ corner_radius_bottom_right = 15
 corner_radius_bottom_left = 15
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_f0hwr"]
-size = Vector2(17, 35)
+size = Vector2(18.5, 35)
 
-[node name="Finn" type="CharacterBody2D"]
+[node name="Finn" type="CharacterBody2D" groups=["Finn"]]
 position = Vector2(206, -86)
 script = ExtResource("1_ll52t")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(-120.625, 111)
+position = Vector2(0, -5)
 scale = Vector2(1.47656, 1.81249)
 sprite_frames = SubResource("SpriteFrames_oygph")
 animation = &"hurt"
@@ -225,7 +225,7 @@ frame = 3
 frame_progress = 0.898358
 
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(-85, 90)
+position = Vector2(37, -25)
 zoom = Vector2(4, 2)
 script = ExtResource("3_fg2l3")
 
@@ -281,7 +281,7 @@ offset_bottom = -123.0
 text = "0"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-123.5, 111.5)
+position = Vector2(-1.25, -4)
 shape = SubResource("RectangleShape2D_f0hwr")
 
 [node name="jump" type="AudioStreamPlayer2D" parent="."]

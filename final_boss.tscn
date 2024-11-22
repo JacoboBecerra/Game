@@ -1,0 +1,82 @@
+[gd_scene load_steps=11 format=3 uid="uid://dqknmee2fjqsu"]
+
+[ext_resource type="Script" path="res://final_boss.gd" id="1_l2ser"]
+[ext_resource type="Texture2D" uid="uid://bycs2f0bn3q1" path="res://Rocky Roads/Enemies/Flying Demon 2D Pixel Art/Sprites/with_outline/IDLE.png" id="2_0tm8e"]
+[ext_resource type="PackedScene" uid="uid://dopw42su7bkpy" path="res://bulletfinalboss.tscn" id="2_t5lec"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f26yb"]
+atlas = ExtResource("2_0tm8e")
+region = Rect2(0, 0, 81, 71)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lynei"]
+atlas = ExtResource("2_0tm8e")
+region = Rect2(81, 0, 81, 71)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ph7h7"]
+atlas = ExtResource("2_0tm8e")
+region = Rect2(162, 0, 81, 71)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mqs5r"]
+atlas = ExtResource("2_0tm8e")
+region = Rect2(243, 0, 81, 71)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_jq8ap"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f26yb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lynei")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ph7h7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mqs5r")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ucrd2"]
+radius = 26.6833
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_ommeg"]
+a = Vector2(-6, 26)
+b = Vector2(-4, 61)
+
+[node name="FinalBoss" type="CharacterBody2D"]
+position = Vector2(665, -175)
+script = ExtResource("1_l2ser")
+bullet = ExtResource("2_t5lec")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(25, -0.999998)
+scale = Vector2(1.37037, 1.4507)
+sprite_frames = SubResource("SpriteFrames_jq8ap")
+animation = &"idle"
+frame = 1
+frame_progress = 0.95123
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(12, 6)
+shape = SubResource("CircleShape2D_ucrd2")
+
+[node name="RayCast2D" type="RayCast2D" parent="."]
+position = Vector2(13, 7)
+scale = Vector2(40, 40)
+target_position = Vector2(-4.2, 2.025)
+
+[node name="spawbullet" type="Marker2D" parent="."]
+position = Vector2(-16, 30)
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 4.0
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+position = Vector2(2, 4)
+shape = SubResource("SegmentShape2D_ommeg")
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

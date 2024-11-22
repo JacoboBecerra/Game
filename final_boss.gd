@@ -1,21 +1,29 @@
 extends CharacterBody2D
 
-
-const SPEED = 300.0
-const JUMP_VELOCITY = -400.0
-
-
-func _physics_process(delta: float) -> void:
-	pass
+@export var bullet : PackedScene
+var puedodisparar:bool = true
 
 
-
-	move_and_slide()
-
-
-func _on_hitbox_body_entered(body: Node2D) -> void:
-	pass # Replace with function body.
+func _ready() -> void:
+	$AnimatedSprite2D.play("idle")
 
 
-func _on_canvas_body_entered(body: Node2D) -> void:
-	pass # Replace with function body.
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	if $RayCast2D.is_colliding():
+		var obj = $RayCast2D.get_collider()
+		if obj and obj.is_in_group("Finn") and puedodisparar:
+			puedodisparar = false
+			$Timer.start()
+			shoot()
+		else:
+			pass
+
+func shoot():
+	var newbullet = bullet.instantiate()
+	newbullet.global_position = $spawbullet.global_position
+	get_parent().add_child(newbullet)
+
+
+func _on_timer_timeout() -> void:
+	puedodisparar = true

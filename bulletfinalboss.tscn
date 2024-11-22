@@ -1,0 +1,103 @@
+[gd_scene load_steps=15 format=3 uid="uid://dopw42su7bkpy"]
+
+[ext_resource type="Script" path="res://bulletfinalboss.gd" id="1_owv3i"]
+[ext_resource type="Texture2D" uid="uid://c4d2g6pdkcjej" path="res://Rocky Roads/Enemies/fireball.png" id="2_k1k1v"]
+[ext_resource type="Texture2D" uid="uid://ugkfojjidhg" path="res://Rocky Roads/FX/bomb_explosion.png" id="3_rbkos"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v4cip"]
+atlas = ExtResource("3_rbkos")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iohfc"]
+atlas = ExtResource("3_rbkos")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ik8nj"]
+atlas = ExtResource("3_rbkos")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5p125"]
+atlas = ExtResource("3_rbkos")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hn3kp"]
+atlas = ExtResource("2_k1k1v")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_idl7c"]
+atlas = ExtResource("2_k1k1v")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_62isy"]
+atlas = ExtResource("2_k1k1v")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a6fnn"]
+atlas = ExtResource("2_k1k1v")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ca7x4"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v4cip")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iohfc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ik8nj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5p125")
+}],
+"loop": true,
+"name": &"bom",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hn3kp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_idl7c")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_62isy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a6fnn")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_v8dih"]
+radius = 7.99867
+height = 20.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_vtg1x"]
+radius = 1.41421
+
+[node name="bulletfinalboss" type="CharacterBody2D"]
+position = Vector2(32, 21)
+script = ExtResource("1_owv3i")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(4, 9.53674e-07)
+scale = Vector2(2.0625, 2.1875)
+sprite_frames = SubResource("SpriteFrames_ca7x4")
+animation = &"bom"
+flip_h = true
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+rotation = -1.56947
+shape = SubResource("CapsuleShape2D_v8dih")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_vtg1x")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
