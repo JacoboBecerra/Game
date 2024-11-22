@@ -44,7 +44,8 @@ func trampolin():
 	velocity.y = -750
 	$trampolin.play()
 	
-
+func explosion():
+	$explosion.play()
 
 func incrementar_vida():
 	vida = vida + 1
@@ -74,7 +75,7 @@ func _process(delta: float) -> void:
 		if nivel == 1:
 			get_tree().change_scene_to_file("res://Nivel2.tscn")
 		if nivel == 2:
-			get_tree().change_scene_to_file("res://Nivel1.tscn")
+			get_tree().change_scene_to_file("res://Nivel_3.tscn")
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
