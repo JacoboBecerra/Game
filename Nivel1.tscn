@@ -1,4 +1,4 @@
-[gd_scene load_steps=105 format=4 uid="uid://csvi8rirhvkb1"]
+[gd_scene load_steps=106 format=4 uid="uid://csvi8rirhvkb1"]
 
 [ext_resource type="Texture2D" uid="uid://bhq6fq2xgp6pt" path="res://Rocky Roads/Deco/water_a_8frames.png" id="1_vklu4"]
 [ext_resource type="Texture2D" uid="uid://cldvjofhmfhd1" path="res://Rocky Roads/Backgrounds/mountains_b.png" id="2_j4yld"]
@@ -30,6 +30,7 @@
 [ext_resource type="PackedScene" uid="uid://d0ol0nghtuae1" path="res://trampolin.tscn" id="28_bm0hh"]
 [ext_resource type="Script" path="res://boton.gd" id="28_te7ma"]
 [ext_resource type="Texture2D" uid="uid://ct04ft1jr6ukm" path="res://Rocky Roads/Objects/button.png" id="29_1h83x"]
+[ext_resource type="Texture2D" uid="uid://uck0lb7dkcdh" path="res://Rocky Roads/Objects/sign.png" id="31_rfpx8"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_n0vrd"]
 atlas = ExtResource("5_3rmkb")
@@ -622,11 +623,11 @@ tile_map_data = PackedByteArray("AAD8//7/AAADAAEAAAD7////AAABAAMAAAD9//7/AAADAAE
 tile_set = SubResource("TileSet_cs8yd")
 
 [node name="boton" type="StaticBody2D" parent="."]
-position = Vector2(921, 95)
+position = Vector2(981, 79)
 script = ExtResource("28_te7ma")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="boton"]
-position = Vector2(-132, 28)
+position = Vector2(-193, 50)
 shape = SubResource("SegmentShape2D_02ysk")
 
 [node name="Area2D" type="Area2D" parent="boton"]
@@ -876,7 +877,7 @@ position = Vector2(1649, 123)
 position = Vector2(1809, 75)
 
 [node name="Coin12" parent="." instance=ExtResource("13_lxr7u")]
-position = Vector2(1726, -158)
+position = Vector2(1994, -151)
 
 [node name="Coin17" parent="." instance=ExtResource("13_lxr7u")]
 position = Vector2(1993, 9)
@@ -885,7 +886,7 @@ position = Vector2(1993, 9)
 position = Vector2(2072, 10)
 
 [node name="Coin14" parent="." instance=ExtResource("13_lxr7u")]
-position = Vector2(2251, 40)
+position = Vector2(765, 95)
 
 [node name="Coin15" parent="." instance=ExtResource("13_lxr7u")]
 position = Vector2(2314, -134)
@@ -946,6 +947,17 @@ autoplay = true
 
 [node name="trampolin" parent="." instance=ExtResource("28_bm0hh")]
 position = Vector2(1567, 169)
+
+[node name="Sign2" type="Sprite2D" parent="."]
+position = Vector2(881, 89)
+texture = ExtResource("31_rfpx8")
+flip_h = true
+
+[node name="Button" type="Sprite2D" parent="Sign2"]
+position = Vector2(1, 3.00001)
+scale = Vector2(0.453127, 0.5625)
+texture = ExtResource("29_1h83x")
+hframes = 4
 
 [connection signal="body_entered" from="boton/Area2D" to="boton" method="_on_area_2d_body_entered"]
 [connection signal="body_entered" from="enemy2/eliminar" to="enemy2" method="_on_eliminar_body_entered"]

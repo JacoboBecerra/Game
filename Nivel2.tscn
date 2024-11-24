@@ -1,4 +1,4 @@
-[gd_scene load_steps=140 format=4 uid="uid://xv058tjovefa"]
+[gd_scene load_steps=141 format=4 uid="uid://xv058tjovefa"]
 
 [ext_resource type="Texture2D" uid="uid://diu17it0qay7j" path="res://Rocky Roads/Backgrounds/desert_a.png" id="1_p3moo"]
 [ext_resource type="Texture2D" uid="uid://bprs7jr45cibe" path="res://Rocky Roads/Backgrounds/clouds.png" id="2_p061o"]
@@ -37,6 +37,7 @@
 [ext_resource type="Script" path="res://huevodepascua.gd" id="36_u0ytu"]
 [ext_resource type="Texture2D" uid="uid://556i1r7te72g" path="res://Rocky Roads/Objects/key.png" id="37_rrrap"]
 [ext_resource type="AudioStream" uid="uid://dl58oj8j602dj" path="res://Music/Sounds/old-radio-button-click-97549.mp3" id="37_sd0o5"]
+[ext_resource type="Texture2D" uid="uid://uck0lb7dkcdh" path="res://Rocky Roads/Objects/sign.png" id="38_uktn3"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_n0vrd"]
 atlas = ExtResource("5_yy6oy")
@@ -1300,6 +1301,16 @@ shape = SubResource("RectangleShape2D_5br7n")
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="boton"]
 stream = ExtResource("37_sd0o5")
 volume_db = 5.0
+
+[node name="Sign2" type="Sprite2D" parent="."]
+position = Vector2(2286, -215)
+texture = ExtResource("38_uktn3")
+
+[node name="Button" type="Sprite2D" parent="Sign2"]
+position = Vector2(-0.999991, 3.00001)
+scale = Vector2(0.453127, 0.5625)
+texture = ExtResource("36_cldf0")
+hframes = 4
 
 [connection signal="body_entered" from="aguaMuerte/Area2D" to="aguaMuerte" method="_on_area_2d_body_entered"]
 [connection signal="body_entered" from="aguaMuerte2/Area2D" to="aguaMuerte2" method="_on_area_2d_body_entered"]

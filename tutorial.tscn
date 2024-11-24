@@ -357,7 +357,7 @@ stream = ExtResource("13_p4vf2")
 volume_db = 5.0
 
 [node name="Finn" parent="." instance=ExtResource("1_shv5p")]
-position = Vector2(-6, 31)
+position = Vector2(-114, 145)
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("12_c12io")
