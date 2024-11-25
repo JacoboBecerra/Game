@@ -1,4 +1,4 @@
-[gd_scene load_steps=106 format=4 uid="uid://csvi8rirhvkb1"]
+[gd_scene load_steps=107 format=4 uid="uid://csvi8rirhvkb1"]
 
 [ext_resource type="Texture2D" uid="uid://bhq6fq2xgp6pt" path="res://Rocky Roads/Deco/water_a_8frames.png" id="1_vklu4"]
 [ext_resource type="Texture2D" uid="uid://cldvjofhmfhd1" path="res://Rocky Roads/Backgrounds/mountains_b.png" id="2_j4yld"]
@@ -27,6 +27,7 @@
 [ext_resource type="Texture2D" uid="uid://copvduqt2v61a" path="res://Rocky Roads/Objects/flag.png" id="19_a1261"]
 [ext_resource type="PackedScene" uid="uid://p5nlaaae2n36" path="res://vida.tscn" id="25_oubhi"]
 [ext_resource type="PackedScene" uid="uid://c3bpklewu67kv" path="res://brake_block.tscn" id="26_4eenx"]
+[ext_resource type="Texture2D" uid="uid://ci8leyk1qyded" path="res://Rocky Roads/Objects/cloud_platforms.png" id="28_6yxud"]
 [ext_resource type="PackedScene" uid="uid://d0ol0nghtuae1" path="res://trampolin.tscn" id="28_bm0hh"]
 [ext_resource type="Script" path="res://boton.gd" id="28_te7ma"]
 [ext_resource type="Texture2D" uid="uid://ct04ft1jr6ukm" path="res://Rocky Roads/Objects/button.png" id="29_1h83x"]
@@ -623,11 +624,11 @@ tile_map_data = PackedByteArray("AAD8//7/AAADAAEAAAD7////AAABAAMAAAD9//7/AAADAAE
 tile_set = SubResource("TileSet_cs8yd")
 
 [node name="boton" type="StaticBody2D" parent="."]
-position = Vector2(981, 79)
+position = Vector2(947, 79)
 script = ExtResource("28_te7ma")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="boton"]
-position = Vector2(-193, 50)
+position = Vector2(-159, 50)
 shape = SubResource("SegmentShape2D_02ysk")
 
 [node name="Area2D" type="Area2D" parent="boton"]
@@ -690,22 +691,6 @@ shape = SubResource("RectangleShape2D_3qu00")
 
 [node name="Sprite2D" type="Sprite2D" parent="platform"]
 position = Vector2(-3, -9)
-scale = Vector2(1.32552, 1.08333)
-texture = ExtResource("6_5y1vr")
-hframes = 8
-vframes = 4
-frame = 22
-
-[node name="platform2" type="CharacterBody2D" parent="."]
-position = Vector2(1997, -77)
-script = ExtResource("14_jrpp6")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="platform2"]
-position = Vector2(-3, -34)
-shape = SubResource("RectangleShape2D_3qu00")
-
-[node name="Sprite2D" type="Sprite2D" parent="platform2"]
-position = Vector2(-3, -29)
 scale = Vector2(1.32552, 1.08333)
 texture = ExtResource("6_5y1vr")
 hframes = 8
@@ -911,6 +896,22 @@ position = Vector2(170, -13)
 
 [node name="Finn" parent="." instance=ExtResource("12_m6dlt")]
 position = Vector2(43, 27)
+
+[node name="platform2" type="CharacterBody2D" parent="."]
+position = Vector2(1997, -77)
+script = ExtResource("14_jrpp6")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="platform2"]
+position = Vector2(-3, -34)
+shape = SubResource("RectangleShape2D_3qu00")
+
+[node name="Sprite2D" type="Sprite2D" parent="platform2"]
+position = Vector2(-3, -33)
+scale = Vector2(1.32552, 1.08333)
+texture = ExtResource("28_6yxud")
+hframes = 2
+vframes = 4
+frame = 2
 
 [node name="Area2D" type="Area2D" parent="."]
 position = Vector2(149, 180)

@@ -1,0 +1,268 @@
+[gd_scene load_steps=23 format=3 uid="uid://bc5etdvhdpdo2"]
+
+[ext_resource type="Texture2D" uid="uid://bhq6fq2xgp6pt" path="res://Rocky Roads/Deco/water_a_8frames.png" id="1_djt6p"]
+[ext_resource type="Texture2D" uid="uid://d1cbtwgbnlil0" path="res://Rocky Roads/Deco/sun.png" id="2_mspid"]
+[ext_resource type="Texture2D" uid="uid://jd4vk8jx8vn" path="res://Rocky Roads/Backgrounds/mountains_a.png" id="3_f478d"]
+[ext_resource type="Texture2D" uid="uid://bprs7jr45cibe" path="res://Rocky Roads/Backgrounds/clouds.png" id="4_4i01b"]
+[ext_resource type="Texture2D" uid="uid://dfquwh05mip27" path="res://Rocky Roads/Enemies/quicksand_8frames.png" id="5_fjrhb"]
+[ext_resource type="Texture2D" uid="uid://b350cs8a1v66t" path="res://Rocky Roads/Deco/tree_c.png" id="6_6l5pj"]
+[ext_resource type="Texture2D" uid="uid://8tno7wj4p7nk" path="res://Rocky Roads/Deco/clouds.png" id="7_i6c2b"]
+[ext_resource type="Texture2D" uid="uid://cw0dyjhlbkd5j" path="res://Rocky Roads/Enemies/crab.png" id="8_8j22a"]
+[ext_resource type="Script" path="res://h_slider.gd" id="9_m6feu"]
+[ext_resource type="AudioStream" uid="uid://dlatj18v503lg" path="res://Music/Sounds/ajuste.mp3" id="10_wjcv2"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_84cwa"]
+atlas = ExtResource("2_mspid")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jyma1"]
+atlas = ExtResource("2_mspid")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_elj1c"]
+atlas = ExtResource("2_mspid")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iq4rk"]
+atlas = ExtResource("2_mspid")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n4qxq"]
+atlas = ExtResource("2_mspid")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p5vpv"]
+atlas = ExtResource("2_mspid")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_iluiy"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_84cwa")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jyma1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_elj1c")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iq4rk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n4qxq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p5vpv")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c54xo"]
+atlas = ExtResource("8_8j22a")
+region = Rect2(0, 16, 32, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h33px"]
+atlas = ExtResource("8_8j22a")
+region = Rect2(32, 16, 32, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tyyfg"]
+atlas = ExtResource("8_8j22a")
+region = Rect2(0, 32, 32, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d78fd"]
+atlas = ExtResource("8_8j22a")
+region = Rect2(32, 32, 32, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_a4hpc"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c54xo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h33px")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tyyfg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d78fd")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[node name="Settings" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="WaterA8Frames2" type="Sprite2D" parent="."]
+position = Vector2(588, 71)
+scale = Vector2(4.61719, 14)
+texture = ExtResource("1_djt6p")
+
+[node name="Sun" type="AnimatedSprite2D" parent="WaterA8Frames2"]
+position = Vector2(14.0778, 13.1429)
+scale = Vector2(2.05753, 0.571429)
+sprite_frames = SubResource("SpriteFrames_iluiy")
+animation = &"idle"
+
+[node name="MountainsA" type="Sprite2D" parent="WaterA8Frames2"]
+position = Vector2(-2.92386, 15.1429)
+scale = Vector2(0.978849, 0.266741)
+texture = ExtResource("3_f478d")
+
+[node name="Clouds" type="Sprite2D" parent="WaterA8Frames2"]
+modulate = Color(1, 1, 1, 0.478431)
+position = Vector2(-3.14043, 21.8571)
+scale = Vector2(1.00254, 0.104911)
+texture = ExtResource("4_4i01b")
+
+[node name="WaterA8Frames" type="Sprite2D" parent="WaterA8Frames2"]
+position = Vector2(-1.51606, 31)
+rotation = 3.1415
+scale = Vector2(1.03891, 0.274554)
+skew = -0.000791073
+texture = ExtResource("1_djt6p")
+
+[node name="Quicksand8Frames2" type="Sprite2D" parent="WaterA8Frames2"]
+position = Vector2(-2.11167, 36.5893)
+scale = Vector2(1.02327, 0.177455)
+texture = ExtResource("5_fjrhb")
+
+[node name="Quicksand8Frames3" type="Sprite2D" parent="WaterA8Frames2"]
+position = Vector2(-2.11167, 41.5357)
+scale = Vector2(1.02327, 0.207589)
+texture = ExtResource("5_fjrhb")
+
+[node name="TreeC" type="Sprite2D" parent="WaterA8Frames2"]
+position = Vector2(76.0203, 31.9286)
+scale = Vector2(0.369993, 0.127976)
+texture = ExtResource("6_6l5pj")
+
+[node name="Clouds2" type="Sprite2D" parent="WaterA8Frames2"]
+position = Vector2(-25.5567, 5.85714)
+scale = Vector2(0.37225, 0.133929)
+texture = ExtResource("7_i6c2b")
+vframes = 3
+
+[node name="Clouds3" type="Sprite2D" parent="WaterA8Frames2"]
+position = Vector2(39.2013, 9)
+scale = Vector2(0.37225, 0.133929)
+texture = ExtResource("7_i6c2b")
+vframes = 3
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="WaterA8Frames2"]
+position = Vector2(-79.269, 38.1964)
+scale = Vector2(0.4467, 0.145089)
+sprite_frames = SubResource("SpriteFrames_a4hpc")
+animation = &"idle"
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+modulate = Color(1, 1, 1, 0.607843)
+offset_right = 1153.0
+offset_bottom = 703.0
+
+[node name="Button" type="Button" parent="CanvasLayer"]
+offset_left = 534.0
+offset_top = 579.0
+offset_right = 632.0
+offset_bottom = 618.0
+text = "Back"
+
+[node name="on" type="Button" parent="CanvasLayer"]
+offset_left = 449.0
+offset_top = 198.0
+offset_right = 563.0
+offset_bottom = 243.0
+text = "On"
+
+[node name="off" type="Button" parent="CanvasLayer"]
+offset_left = 621.0
+offset_top = 198.0
+offset_right = 735.0
+offset_bottom = 241.0
+text = "Off"
+
+[node name="HSlider" type="HSlider" parent="CanvasLayer"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -231.5
+offset_top = 33.5
+offset_right = 231.5
+offset_bottom = 178.5
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("9_m6feu")
+
+[node name="PanelContainer" type="PanelContainer" parent="CanvasLayer/HSlider"]
+layout_mode = 0
+offset_left = 178.5
+offset_top = 9.5
+offset_right = 286.5
+offset_bottom = 49.5
+
+[node name="PanelContainer2" type="PanelContainer" parent="CanvasLayer/HSlider"]
+layout_mode = 0
+offset_left = 180.0
+offset_top = -250.0
+offset_right = 329.0
+offset_bottom = -205.0
+
+[node name="Label" type="Label" parent="CanvasLayer/HSlider"]
+texture_filter = 2
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -45.0
+offset_top = -67.5
+offset_right = 33.0
+offset_bottom = -44.5
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(2, 2)
+text = "Audio"
+
+[node name="Label2" type="Label" parent="CanvasLayer/HSlider"]
+texture_filter = 2
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -44.0
+offset_top = -325.0
+offset_right = 34.0
+offset_bottom = -302.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(2, 2)
+text = "Daltonic"
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("10_wjcv2")
+volume_db = -44.229
+
+[connection signal="pressed" from="CanvasLayer/Button" to="CanvasLayer/HSlider" method="_on_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/on" to="CanvasLayer/HSlider" method="_on_on_pressed"]
+[connection signal="pressed" from="CanvasLayer/off" to="CanvasLayer/HSlider" method="_on_off_pressed"]
+[connection signal="drag_ended" from="CanvasLayer/HSlider" to="CanvasLayer/HSlider" method="_on_drag_ended"]
+[connection signal="value_changed" from="CanvasLayer/HSlider" to="CanvasLayer/HSlider" method="_on_value_changed"]

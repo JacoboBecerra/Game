@@ -1,4 +1,4 @@
-[gd_scene load_steps=141 format=4 uid="uid://xv058tjovefa"]
+[gd_scene load_steps=142 format=4 uid="uid://xv058tjovefa"]
 
 [ext_resource type="Texture2D" uid="uid://diu17it0qay7j" path="res://Rocky Roads/Backgrounds/desert_a.png" id="1_p3moo"]
 [ext_resource type="Texture2D" uid="uid://bprs7jr45cibe" path="res://Rocky Roads/Backgrounds/clouds.png" id="2_p061o"]
@@ -26,6 +26,7 @@
 [ext_resource type="Texture2D" uid="uid://copvduqt2v61a" path="res://Rocky Roads/Objects/flag.png" id="21_stbvw"]
 [ext_resource type="PackedScene" uid="uid://p5nlaaae2n36" path="res://vida.tscn" id="22_db1xi"]
 [ext_resource type="PackedScene" uid="uid://c3bpklewu67kv" path="res://brake_block.tscn" id="23_n7sqo"]
+[ext_resource type="AudioStream" uid="uid://r22opxxv681" path="res://Music/Sounds/teleport-90324.mp3" id="24_3n8gw"]
 [ext_resource type="PackedScene" uid="uid://c2kyfoudbbmqu" path="res://coin.tscn" id="24_wky7x"]
 [ext_resource type="PackedScene" uid="uid://c30eiyjcun7gx" path="res://finn.tscn" id="25_yhg5x"]
 [ext_resource type="Script" path="res://ZonaCaida.gd" id="26_q508o"]
@@ -1103,6 +1104,10 @@ scale = Vector2(1.4375, 1.5625)
 sprite_frames = SubResource("SpriteFrames_2lsae")
 animation = &"idle"
 frame_progress = 0.535867
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="huevodepascua"]
+stream = ExtResource("24_3n8gw")
+volume_db = 10.0
 
 [node name="vida" parent="." instance=ExtResource("22_db1xi")]
 position = Vector2(1070, -248)

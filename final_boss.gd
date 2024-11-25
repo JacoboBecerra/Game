@@ -11,10 +11,13 @@ func _ready() -> void:
 
 func disminuir_vida():
 	vidas = vidas - 1
-	$hurt.play()
-	print("tienes " + str(vidas) + " vidas")
+	if vidas > 0:
+		$hurt.play()
+		print("tienes " + str(vidas) + " vidas")
 	if vidas == 0:
-		await get_tree().create_timer(2.05).timeout
+		$hurt2.play()
+		$AnimatedSprite2D.play("dead")
+		await get_tree().create_timer(2).timeout
 		queue_free()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -29,8 +32,7 @@ func _process(delta: float) -> void:
 			pass
 			
 	
-	if vidas == 0:
-		pass
+	
 
 func shoot():
 	$AnimatedSprite2D.play("shoot")

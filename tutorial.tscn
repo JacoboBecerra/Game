@@ -1,4 +1,4 @@
-[gd_scene load_steps=50 format=4 uid="uid://cep8vceemgvpc"]
+[gd_scene load_steps=44 format=4 uid="uid://cep8vceemgvpc"]
 
 [ext_resource type="Texture2D" uid="uid://hmjhjfbovma2" path="res://Rocky Roads/Backgrounds/desert_b.png" id="1_gr6gc"]
 [ext_resource type="PackedScene" uid="uid://c30eiyjcun7gx" path="res://finn.tscn" id="1_shv5p"]
@@ -8,7 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://p5nlaaae2n36" path="res://vida.tscn" id="4_ljwie"]
 [ext_resource type="Script" path="res://power.gd" id="4_yu38i"]
 [ext_resource type="PackedScene" uid="uid://c3bpklewu67kv" path="res://brake_block.tscn" id="5_ahda5"]
-[ext_resource type="Texture2D" uid="uid://c205mv1ay7y8t" path="res://Rocky Roads/Objects/lock.png" id="5_fagol"]
+[ext_resource type="Texture2D" uid="uid://d3ffvwfndlbpg" path="res://character/New Piskel.png" id="5_svcvp"]
 [ext_resource type="Script" path="res://tutorialenemy.gd" id="6_w6o8b"]
 [ext_resource type="Texture2D" uid="uid://cpjfre0fpq7e0" path="res://Rocky Roads/Enemies/slime_purple.png" id="7_6ol8i"]
 [ext_resource type="Script" path="res://tutorialfinish.gd" id="9_qcrb7"]
@@ -63,60 +63,18 @@ texture = ExtResource("2_42nm8")
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_pjetv")
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_akp46"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_b4hu3"]
 radius = 9.0
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_xj7ki"]
-atlas = ExtResource("5_fagol")
-region = Rect2(0, 0, 16, 16)
+[sub_resource type="AtlasTexture" id="AtlasTexture_73lud"]
+atlas = ExtResource("5_svcvp")
+region = Rect2(0, 0, 64, 64)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_2jk1c"]
-atlas = ExtResource("5_fagol")
-region = Rect2(16, 0, 16, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_2u6r2"]
-atlas = ExtResource("5_fagol")
-region = Rect2(32, 0, 16, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_daaui"]
-atlas = ExtResource("5_fagol")
-region = Rect2(48, 0, 16, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_q54s3"]
-atlas = ExtResource("5_fagol")
-region = Rect2(64, 0, 16, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_xg471"]
-atlas = ExtResource("5_fagol")
-region = Rect2(80, 0, 16, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_lxh4s"]
-atlas = ExtResource("5_fagol")
-region = Rect2(96, 0, 16, 16)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_sjysy"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_earal"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_xj7ki")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_2jk1c")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_2u6r2")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_daaui")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_q54s3")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_xg471")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_lxh4s")
+"texture": SubResource("AtlasTexture_73lud")
 }],
 "loop": true,
 "name": &"idle",
@@ -278,13 +236,13 @@ position = Vector2(3271, 78)
 script = ExtResource("4_yu38i")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="power"]
-shape = SubResource("CircleShape2D_akp46")
+shape = SubResource("CircleShape2D_b4hu3")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="power"]
-position = Vector2(-0.000785331, -0.936445)
+position = Vector2(8, 1.99999)
 rotation = -0.000936389
-scale = Vector2(1.09839, 1.34699)
-sprite_frames = SubResource("SpriteFrames_sjysy")
+scale = Vector2(0.805379, 0.961705)
+sprite_frames = SubResource("SpriteFrames_earal")
 animation = &"idle"
 
 [node name="Coin" parent="." instance=ExtResource("3_l8r2v")]

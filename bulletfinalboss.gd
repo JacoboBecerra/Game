@@ -3,6 +3,7 @@ extends CharacterBody2D
 var speed : float = 50 # Velocidad de movimiento del enemigo
 var player = null
 var initial_x : float = 0
+var distance_travelled : float = 0
 
 
 func _ready():
@@ -21,12 +22,9 @@ func _process(delta: float) -> void:
 	if player != null:
 		follow(delta)
 		
-	max_length()
-		
-		
-	
-func max_length():
-	if abs(position.x - initial_x) >= 270:
+	distance_travelled += 1
+
+	if distance_travelled >= 270:
 		$AnimatedSprite2D.play("bom")
 		$explosion.play()  # Reproduce el sonido de explosión
 		await get_tree().create_timer(0.9).timeout

@@ -1,4 +1,4 @@
-[gd_scene load_steps=41 format=3 uid="uid://c30eiyjcun7gx"]
+[gd_scene load_steps=42 format=3 uid="uid://c30eiyjcun7gx"]
 
 [ext_resource type="Script" path="res://character_body_2d.gd" id="1_ll52t"]
 [ext_resource type="Texture2D" uid="uid://do18814hsc8uk" path="res://character/FinnSprite.png" id="2_vmx0i"]
@@ -6,12 +6,13 @@
 [ext_resource type="Texture2D" uid="uid://by1obhtpf6mlx" path="res://Rocky Roads/Objects/coin_gold.png" id="3_qswe7"]
 [ext_resource type="AudioStream" uid="uid://dk58pl24mtxra" path="res://Music/Sounds/jump-up-245782.mp3" id="4_nlb7r"]
 [ext_resource type="Texture2D" uid="uid://bslc5y60iolaf" path="res://Rocky Roads/Objects/heart.png" id="4_phbb0"]
+[ext_resource type="PackedScene" uid="uid://bfg8m3x1dmf77" path="res://pause_menu.tscn" id="6_ubvwf"]
 [ext_resource type="AudioStream" uid="uid://bom13kgfwp7c7" path="res://Music/Sounds/male_hurt7-48124.mp3" id="7_7rpxc"]
 [ext_resource type="AudioStream" uid="uid://dbkbho7ar5wxi" path="res://Music/Sounds/enemy1death.mp3" id="8_bacjr"]
 [ext_resource type="AudioStream" uid="uid://bqnqxuurots65" path="res://Music/Sounds/boing.mp3" id="9_4yud1"]
 [ext_resource type="AudioStream" uid="uid://d171alhlgdjkn" path="res://Music/Sounds/coin-257878.mp3" id="10_wtwpv"]
 [ext_resource type="AudioStream" uid="uid://dswhpw0twurer" path="res://Music/Sounds/medium-explosion-40472.mp3" id="11_83xrw"]
-[ext_resource type="AudioStream" uid="uid://c6jpoyepy2318" path="res://Music/Sounds/Rayo.mp3" id="12_aehwm"]
+[ext_resource type="AudioStream" uid="uid://cxd11kc71d4o1" path="res://Music/Sounds/finnbullet.mp3" id="12_ith5t"]
 [ext_resource type="AudioStream" uid="uid://basyk6bjrro2t" path="res://Music/Sounds/reload.mp3" id="13_daxmt"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_mrfmy"]
@@ -312,13 +313,23 @@ stream = ExtResource("11_83xrw")
 volume_db = -3.586
 
 [node name="shoot" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("12_aehwm")
-volume_db = 3.0
+stream = ExtResource("12_ith5t")
+volume_db = -8.0
 
 [node name="power" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("13_daxmt")
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 2.0
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+process_mode = 3
+
+[node name="Pause_menu" parent="CanvasLayer" instance=ExtResource("6_ubvwf")]
+visible = false
+offset_left = -1.0
+offset_top = 3.0
+offset_right = -1.0
+offset_bottom = 3.0
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

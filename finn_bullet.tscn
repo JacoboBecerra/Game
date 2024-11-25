@@ -1,23 +1,22 @@
 [gd_scene load_steps=4 format=3 uid="uid://difebjcgtch0t"]
 
 [ext_resource type="Script" path="res://finn_bullet.gd" id="1_ciwgy"]
-[ext_resource type="Texture2D" uid="uid://bbthjoqih5xyc" path="res://Rocky Roads/Enemies/lightning.png" id="2_b0gew"]
+[ext_resource type="Texture2D" uid="uid://d3ffvwfndlbpg" path="res://character/New Piskel.png" id="2_245yh"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_04fpx"]
-size = Vector2(6, 28)
+size = Vector2(12.0045, 10.9999)
 
 [node name="FinnBullet" type="Area2D"]
 rotation = -1.57543
 script = ExtResource("1_ciwgy")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(0.40625, 0.3125)
-texture = ExtResource("2_b0gew")
-hframes = 8
-frame = 3
-
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(1, -1)
+position = Vector2(0.00231412, -0.499994)
 shape = SubResource("RectangleShape2D_04fpx")
+
+[node name="NewPiskel" type="Sprite2D" parent="."]
+position = Vector2(6.98604, 1.14669)
+scale = Vector2(0.696916, 0.696206)
+texture = ExtResource("2_245yh")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

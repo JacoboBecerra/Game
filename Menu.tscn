@@ -112,61 +112,62 @@ position = Vector2(588, 71)
 scale = Vector2(4.61719, 14)
 texture = ExtResource("2_8ane2")
 
-[node name="Sun" type="AnimatedSprite2D" parent="."]
-position = Vector2(653, 255)
-scale = Vector2(9.5, 8)
+[node name="Sun" type="AnimatedSprite2D" parent="WaterA8Frames2"]
+position = Vector2(14.0778, 13.1429)
+scale = Vector2(2.05753, 0.571429)
 sprite_frames = SubResource("SpriteFrames_w128o")
 animation = &"idle"
 frame = 2
 frame_progress = 0.599366
 
-[node name="MountainsA" type="Sprite2D" parent="."]
-position = Vector2(574.5, 283)
-scale = Vector2(4.51953, 3.73437)
+[node name="MountainsA" type="Sprite2D" parent="WaterA8Frames2"]
+position = Vector2(-2.92386, 15.1429)
+scale = Vector2(0.978849, 0.266741)
 texture = ExtResource("4_25lsc")
 
-[node name="WaterA8Frames" type="Sprite2D" parent="."]
-position = Vector2(581, 505)
-rotation = 3.1413
-scale = Vector2(4.79686, 3.84375)
-texture = ExtResource("2_8ane2")
-
-[node name="Clouds" type="Sprite2D" parent="."]
+[node name="Clouds" type="Sprite2D" parent="WaterA8Frames2"]
 modulate = Color(1, 1, 1, 0.478431)
-position = Vector2(573.5, 377)
-scale = Vector2(4.62891, 1.46875)
+position = Vector2(-3.14043, 21.8571)
+scale = Vector2(1.00254, 0.104911)
 texture = ExtResource("6_b81lx")
 
-[node name="Quicksand8Frames2" type="Sprite2D" parent="."]
-position = Vector2(578.25, 583.25)
-scale = Vector2(4.72461, 2.48437)
+[node name="WaterA8Frames" type="Sprite2D" parent="WaterA8Frames2"]
+position = Vector2(-1.51606, 31)
+rotation = 3.1415
+scale = Vector2(1.03891, 0.274554)
+skew = -0.000790954
+texture = ExtResource("2_8ane2")
+
+[node name="Quicksand8Frames2" type="Sprite2D" parent="WaterA8Frames2"]
+position = Vector2(-2.11167, 36.5893)
+scale = Vector2(1.02327, 0.177455)
 texture = ExtResource("7_pxsd4")
 
-[node name="Quicksand8Frames3" type="Sprite2D" parent="."]
-position = Vector2(578.25, 652.5)
-scale = Vector2(4.72461, 2.90625)
+[node name="Quicksand8Frames3" type="Sprite2D" parent="WaterA8Frames2"]
+position = Vector2(-2.11167, 41.5357)
+scale = Vector2(1.02327, 0.207589)
 texture = ExtResource("7_pxsd4")
 
-[node name="TreeC" type="Sprite2D" parent="."]
-position = Vector2(939, 518)
-scale = Vector2(1.70833, 1.79167)
+[node name="TreeC" type="Sprite2D" parent="WaterA8Frames2"]
+position = Vector2(76.0203, 31.9286)
+scale = Vector2(0.369993, 0.127976)
 texture = ExtResource("8_4jq3f")
 
-[node name="Clouds2" type="Sprite2D" parent="."]
-position = Vector2(470, 153)
-scale = Vector2(1.71875, 1.875)
+[node name="Clouds2" type="Sprite2D" parent="WaterA8Frames2"]
+position = Vector2(-25.5567, 5.85714)
+scale = Vector2(0.37225, 0.133929)
 texture = ExtResource("9_a37rs")
 vframes = 3
 
-[node name="Clouds3" type="Sprite2D" parent="."]
-position = Vector2(769, 197)
-scale = Vector2(1.71875, 1.875)
+[node name="Clouds3" type="Sprite2D" parent="WaterA8Frames2"]
+position = Vector2(39.2013, 9)
+scale = Vector2(0.37225, 0.133929)
 texture = ExtResource("9_a37rs")
 vframes = 3
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(222, 605.75)
-scale = Vector2(2.0625, 2.03125)
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="WaterA8Frames2"]
+position = Vector2(-79.269, 38.1964)
+scale = Vector2(0.4467, 0.145089)
 sprite_frames = SubResource("SpriteFrames_l0eqg")
 animation = &"idle"
 frame_progress = 0.0182736
@@ -202,7 +203,7 @@ text = "Settings"
 layout_mode = 2
 text = "Quit"
 
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+[node name="Menu" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("10_ntriy")
 autoplay = true
 
@@ -213,4 +214,5 @@ texture = ExtResource("11_vyeep")
 
 [connection signal="pressed" from="VBoxContainer/Start_game" to="." method="_on_start_game_pressed"]
 [connection signal="pressed" from="VBoxContainer/tutorial" to="." method="_on_tutorial_pressed"]
+[connection signal="pressed" from="VBoxContainer/Settings" to="." method="_on_settings_pressed"]
 [connection signal="pressed" from="VBoxContainer/Quit" to="." method="_on_quit_pressed"]
