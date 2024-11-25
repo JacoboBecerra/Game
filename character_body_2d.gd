@@ -4,12 +4,16 @@ extends CharacterBody2D
 const SPEED = 175.0
 const JUMP_VELOCITY = -350.0
 
+var puededisparar=true
 var monedas = 0
 var daño = 0
 var vida = 3
 var control = 0
 var nivel = 0
+var bullet = 0
 @onready var camara2D := get_node("Camera2D")
+@onready var finn_bullet = preload("res://finn_bullet.tscn")
+@onready var shoot_timer = Timer.new()
 
 
 
@@ -18,6 +22,12 @@ func _ready() -> void:
 	$AnimatedSprite2D.play("idle")
 	camara2D.corazones_ui(vida)
 	
+	
+
+func disparar():
+	$power.play()
+	bullet=1
+
 func enemy_sound():
 	$enemy_death.play()
 
@@ -83,7 +93,7 @@ func _physics_process(delta: float) -> void:
 		velocity += get_gravity() * delta
 
 	# Handle jump.
-	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
+	if Input.is_action_just_pressed("ui_accept") and is_on_floor() or Input.is_action_just_pressed("ui_up") and is_on_floor():
 		$jump.play()
 		velocity.y = JUMP_VELOCITY
 		
@@ -102,4 +112,21 @@ func _physics_process(delta: float) -> void:
 		$AnimatedSprite2D.play("idle")
 		velocity.x = 0
 
+	if bullet == 1 and puededisparar:
+		if Input.is_action_just_pressed("shoot"):
+			$shoot.play()
+			shoot()
+			puededisparar=false
+			$Timer.start()
+
 	move_and_slide()
+	
+func shoot():
+	var bullet = finn_bullet.instantiate()
+	bullet.position = position
+	bullet.bullet_direction = (get_global_mouse_position() - position).normalized()
+	get_parent().add_child(bullet)
+
+
+func _on_timer_timeout() -> void:
+	puededisparar=true

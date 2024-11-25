@@ -9,11 +9,19 @@ func _ready() -> void:
 	$AnimatedSprite2D.play("idle")
 
 
+func disminuir_vida():
+	vidas = vidas - 1
+	$hurt.play()
+	print("tienes " + str(vidas) + " vidas")
+	if vidas == 0:
+		await get_tree().create_timer(2.05).timeout
+		queue_free()
+
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	if $RayCast2D.is_colliding():
 		var obj = $RayCast2D.get_collider()
-		if obj and obj.is_in_group("Finn") and puedodisparar:
+		if obj and obj.is_in_group("Finn") and puedodisparar and vidas>0:
 			puedodisparar = false
 			$Timer.start()
 			shoot()

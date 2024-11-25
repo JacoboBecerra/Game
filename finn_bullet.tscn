@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://difebjcgtch0t"]
+
+[ext_resource type="Script" path="res://finn_bullet.gd" id="1_ciwgy"]
+[ext_resource type="Texture2D" uid="uid://bbthjoqih5xyc" path="res://Rocky Roads/Enemies/lightning.png" id="2_b0gew"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_04fpx"]
+size = Vector2(6, 28)
+
+[node name="FinnBullet" type="Area2D"]
+rotation = -1.57543
+script = ExtResource("1_ciwgy")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.40625, 0.3125)
+texture = ExtResource("2_b0gew")
+hframes = 8
+frame = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1, -1)
+shape = SubResource("RectangleShape2D_04fpx")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

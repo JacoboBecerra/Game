@@ -1,10 +1,11 @@
-[gd_scene load_steps=19 format=3 uid="uid://dqknmee2fjqsu"]
+[gd_scene load_steps=20 format=3 uid="uid://dqknmee2fjqsu"]
 
 [ext_resource type="Script" path="res://final_boss.gd" id="1_l2ser"]
 [ext_resource type="Texture2D" uid="uid://bycs2f0bn3q1" path="res://Rocky Roads/Enemies/Flying Demon 2D Pixel Art/Sprites/with_outline/IDLE.png" id="2_0tm8e"]
 [ext_resource type="PackedScene" uid="uid://dopw42su7bkpy" path="res://bulletfinalboss.tscn" id="2_t5lec"]
 [ext_resource type="Texture2D" uid="uid://dlt5cm8v03kos" path="res://Rocky Roads/Enemies/Flying Demon 2D Pixel Art/Sprites/with_outline/ATTACK.png" id="4_ihpof"]
 [ext_resource type="AudioStream" uid="uid://c8cc7yror30an" path="res://Music/Sounds/large-monster-roar-195717.mp3" id="5_vhkc8"]
+[ext_resource type="AudioStream" uid="uid://ds8hqv7shv2a2" path="res://Music/Sounds/monster-hurt.mp3" id="6_f4dc1"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_f26yb"]
 atlas = ExtResource("2_0tm8e")
@@ -131,5 +132,9 @@ shape = SubResource("SegmentShape2D_ommeg")
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("5_vhkc8")
 pitch_scale = 1.5
+
+[node name="hurt" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("6_f4dc1")
+volume_db = 15.0
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
