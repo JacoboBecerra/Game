@@ -257,7 +257,8 @@ grow_vertical = 2
 scale = Vector2(2, 2)
 text = "Daltonic"
 
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="CanvasLayer"]
+position = Vector2(2, -6)
 stream = ExtResource("10_wjcv2")
 volume_db = -44.229
 

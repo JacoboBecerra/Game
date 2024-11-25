@@ -4,7 +4,7 @@ extends CharacterBody2D
 
 const SPEED = 40.0
 var left_limit: float = 1895.0  # Límite izquierdo en la posición X
-var right_limit: float = 1970.0  # Límite derecho en la posición X
+var right_limit: float = 1960.0  # Límite derecho en la posición X
 @onready var animation_player = $AnimatedSprite2D
 
 

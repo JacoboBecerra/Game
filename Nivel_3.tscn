@@ -1,4 +1,4 @@
-[gd_scene load_steps=71 format=4 uid="uid://bb10ulofng7k5"]
+[gd_scene load_steps=73 format=4 uid="uid://bb10ulofng7k5"]
 
 [ext_resource type="Texture2D" uid="uid://hmjhjfbovma2" path="res://Rocky Roads/Backgrounds/desert_b.png" id="1_aqygb"]
 [ext_resource type="Texture2D" uid="uid://dkyacrwnuaht4" path="res://Rocky Roads/Tilesets/tileset_snow.png" id="1_dyco6"]
@@ -16,6 +16,7 @@
 [ext_resource type="PackedScene" uid="uid://d0ol0nghtuae1" path="res://trampolin.tscn" id="15_ota38"]
 [ext_resource type="Texture2D" uid="uid://bycs2f0bn3q1" path="res://Rocky Roads/Enemies/Flying Demon 2D Pixel Art/Sprites/with_outline/IDLE.png" id="16_gioxp"]
 [ext_resource type="Texture2D" uid="uid://cpjfre0fpq7e0" path="res://Rocky Roads/Enemies/slime_purple.png" id="17_8d0j2"]
+[ext_resource type="AudioStream" uid="uid://r22opxxv681" path="res://Music/Sounds/teleport-90324.mp3" id="17_e2i8s"]
 [ext_resource type="Script" path="res://enemysnow.gd" id="21_jueo1"]
 [ext_resource type="PackedScene" uid="uid://cl1mihtcg4yea" path="res://pinchos.tscn" id="21_kx681"]
 [ext_resource type="PackedScene" uid="uid://p5nlaaae2n36" path="res://vida.tscn" id="24_yxt5d"]
@@ -180,6 +181,10 @@ a = Vector2(0, -18)
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_roiov"]
 a = Vector2(-9, -500)
 b = Vector2(4, 147)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_vhnaw"]
+a = Vector2(-1072, -192)
+b = Vector2(4384, -195)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_splxk"]
 size = Vector2(10, 9)
@@ -351,8 +356,8 @@ texture = ExtResource("2_5xans")
 
 [node name="Clouds2" type="Sprite2D" parent="."]
 modulate = Color(0.0980392, 0, 0.247059, 1)
-position = Vector2(1878, -551)
-scale = Vector2(8.52539, 10.3867)
+position = Vector2(1873.13, -551)
+scale = Vector2(8.56348, 10.3867)
 texture = ExtResource("2_5xans")
 
 [node name="Clouds3" type="Sprite2D" parent="."]
@@ -524,6 +529,10 @@ script = ExtResource("29_6cq8o")
 position = Vector2(116, -390)
 shape = SubResource("SegmentShape2D_psx1q")
 
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer" parent="Area2D"]
+stream = ExtResource("17_e2i8s")
+volume_db = 10.0
+
 [node name="canon" parent="." instance=ExtResource("7_465uo")]
 position = Vector2(1022, -368)
 
@@ -599,6 +608,10 @@ shape = SubResource("SegmentShape2D_ye6io")
 [node name="CollisionShape2D12" type="CollisionShape2D" parent="mapa"]
 position = Vector2(4307, -204)
 shape = SubResource("SegmentShape2D_roiov")
+
+[node name="CollisionShape2D48" type="CollisionShape2D" parent="mapa"]
+position = Vector2(-64, 142)
+shape = SubResource("SegmentShape2D_vhnaw")
 
 [node name="trampolin" parent="." instance=ExtResource("15_ota38")]
 position = Vector2(876, -154)
@@ -718,7 +731,7 @@ texture = ExtResource("36_h0jhf")
 hframes = 4
 
 [node name="Finn" parent="." instance=ExtResource("27_vl074")]
-position = Vector2(2985, -367)
+position = Vector2(-1102, -105)
 
 [node name="LogWall" type="Sprite2D" parent="."]
 position = Vector2(3798, -380)

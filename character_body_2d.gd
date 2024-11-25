@@ -90,7 +90,7 @@ func _process(delta: float) -> void:
 		if nivel == 2:
 			get_tree().change_scene_to_file("res://Nivel_3.tscn")
 		if nivel == 3:
-			get_tree().change_scene_to_file("res://Menu.tscn")
+			get_tree().change_scene_to_file("res://final.tscn")
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.

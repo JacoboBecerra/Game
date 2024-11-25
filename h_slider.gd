@@ -7,13 +7,13 @@ func _ready() -> void:
 
 
 func _on_drag_ended(value_changed: bool) -> void:
-	$"../../AudioStreamPlayer2D".play()
+	$"../AudioStreamPlayer2D".play()
 	
 
 
 
 func _on_value_changed(value: float) -> void:
-	$"../../AudioStreamPlayer2D".volume_db = value
+	$"../AudioStreamPlayer2D".volume_db = value
 	
 
 
