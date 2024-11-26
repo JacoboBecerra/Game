@@ -1,0 +1,62 @@
+[gd_scene load_steps=3 format=3 uid="uid://cgiyhqcorq05h"]
+
+[ext_resource type="Script" path="res://username.gd" id="1_3eel6"]
+[ext_resource type="Texture2D" uid="uid://bprs7jr45cibe" path="res://Rocky Roads/Backgrounds/clouds.png" id="1_5b4wc"]
+
+[node name="Username" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_3eel6")
+
+[node name="Clouds" type="Sprite2D" parent="."]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(575, -180)
+scale = Vector2(4.51953, 13.75)
+texture = ExtResource("1_5b4wc")
+
+[node name="LineEdit" type="LineEdit" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -88.0
+offset_top = -21.0
+offset_right = 88.0
+offset_bottom = 21.0
+grow_horizontal = 2
+grow_vertical = 2
+placeholder_text = "Username"
+alignment = 1
+
+[node name="Label" type="Label" parent="."]
+texture_filter = 2
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -86.0
+offset_top = -49.0
+offset_right = 91.0
+offset_bottom = -26.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Enter your username:"
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 528.0
+offset_top = 387.0
+offset_right = 628.0
+offset_bottom = 418.0
+text = "Play"
+
+[connection signal="text_submitted" from="LineEdit" to="." method="_on_line_edit_text_submitted"]
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

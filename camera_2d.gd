@@ -15,7 +15,7 @@ func _ready() -> void:
 func corazones_ui(vida):
 	if vida == 0:
 		heart1.visible=false
-		get_tree().reload_current_scene()
+		get_tree().change_scene_to_file("res://game_over.tscn")
 	if vida == 1:
 		heart2.visible=false
 		heart1.visible=true

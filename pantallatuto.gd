@@ -14,7 +14,7 @@ func _process(delta: float) -> void:
 
 func _on_button_pressed() -> void:
 	if accept == true:
-		get_tree().change_scene_to_file("res://Nivel1.tscn")
+		get_tree().change_scene_to_file("res://username.tscn")
 	
 
 
