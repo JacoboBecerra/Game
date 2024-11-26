@@ -302,16 +302,71 @@ animation = &"idle"
 frame = 2
 frame_progress = 0.754453
 
-[node name="TextEdit" type="TextEdit" parent="."]
+[node name="Panel" type="Panel" parent="."]
+offset_left = -179.0
+offset_top = -4.0
+offset_right = -49.0
+offset_bottom = 65.0
+
+[node name="Panel2" type="Panel" parent="."]
+offset_left = 295.0
+offset_top = 4.0
+offset_right = 405.0
+offset_bottom = 75.0
+
+[node name="Panel3" type="Panel" parent="."]
+offset_left = 1063.0
+offset_top = 13.0
+offset_right = 1205.0
+offset_bottom = 84.0
+
+[node name="Panel4" type="Panel" parent="."]
+offset_left = 1533.0
+offset_top = 11.0
+offset_right = 1693.0
+offset_bottom = 85.0
+
+[node name="Panel5" type="Panel" parent="."]
+offset_left = 2098.0
+offset_top = 15.0
+offset_right = 2247.0
+offset_bottom = 89.0
+
+[node name="Panel6" type="Panel" parent="."]
+offset_left = 2592.0
+offset_top = 6.0
+offset_right = 2754.0
+offset_bottom = 80.0
+
+[node name="Panel7" type="Panel" parent="."]
+offset_left = 3056.0
+offset_top = 18.0
+offset_right = 3222.0
+offset_bottom = 77.0
+
+[node name="Panel8" type="Panel" parent="."]
+offset_left = 3323.0
+offset_top = 19.0
+offset_right = 3494.0
+offset_bottom = 91.0
+
+[node name="Panel9" type="Panel" parent="."]
+offset_left = 3727.0
+offset_top = 34.0
+offset_right = 3872.0
+offset_bottom = 89.0
+
+[node name="TextEdit" type="Label" parent="."]
+texture_filter = 2
 offset_left = 298.0
 offset_right = 417.0
 offset_bottom = 90.0
 text = "Pulsa la barra 
 espaciadora 
 para saltar "
-editable = false
 
-[node name="TextEdit3" type="TextEdit" parent="."]
+[node name="TextEdit3" type="Label" parent="."]
+texture_filter = 2
 offset_left = 1065.0
 offset_top = 9.0
 offset_right = 1227.0
@@ -319,9 +374,9 @@ offset_bottom = 98.0
 text = "Las monedas son 
 los coleccionables 
 del juego."
-editable = false
 
-[node name="TextEdit4" type="TextEdit" parent="."]
+[node name="TextEdit4" type="Label" parent="."]
+texture_filter = 2
 offset_left = 1537.0
 offset_top = 9.0
 offset_right = 1699.0
@@ -329,9 +384,9 @@ offset_bottom = 99.0
 text = "Los bloques ocultan
 objetos. 
 ¿Qué habrá aquí?"
-editable = false
 
-[node name="TextEdit5" type="TextEdit" parent="."]
+[node name="TextEdit5" type="Label" parent="."]
+texture_filter = 2
 offset_left = 2104.0
 offset_top = 12.0
 offset_right = 2282.0
@@ -339,18 +394,18 @@ offset_bottom = 102.0
 text = "Salta encima para 
 eliminar a los 
 enemigos."
-editable = false
 
-[node name="TextEdit6" type="TextEdit" parent="."]
+[node name="TextEdit6" type="Label" parent="."]
+texture_filter = 2
 offset_left = 3732.0
 offset_top = 37.0
 offset_right = 3894.0
 offset_bottom = 100.0
 text = "La bandera indica 
 el final del mapa."
-editable = false
 
-[node name="TextEdit2" type="TextEdit" parent="."]
+[node name="TextEdit2" type="Label" parent="."]
+texture_filter = 2
 offset_left = -176.0
 offset_top = -8.0
 offset_right = -36.0
@@ -358,9 +413,9 @@ offset_bottom = 82.0
 text = "Pulsa las flechas
 del teclado para 
 moverte."
-editable = false
 
-[node name="TextEdit7" type="TextEdit" parent="."]
+[node name="TextEdit7" type="Label" parent="."]
+texture_filter = 2
 offset_left = 2596.0
 offset_top = 6.0
 offset_right = 2762.0
@@ -368,16 +423,25 @@ offset_bottom = 96.0
 text = "Los botones pueden
 desbloquear zonas
 inaccesibles."
-editable = false
 
-[node name="TextEdit8" type="TextEdit" parent="."]
-offset_left = 3055.0
-offset_top = 11.0
-offset_right = 3229.0
-offset_bottom = 73.0
+[node name="TextEdit8" type="Label" parent="."]
+texture_filter = 2
+offset_left = 3060.0
+offset_top = 21.0
+offset_right = 3234.0
+offset_bottom = 83.0
 text = "Esta es la habilidad
 oculta del personaje. "
-editable = false
+
+[node name="TextEdit9" type="Label" parent="."]
+texture_filter = 2
+offset_left = 3331.0
+offset_top = 16.0
+offset_right = 3503.0
+offset_bottom = 105.0
+text = "Apunta con el mouse
+y dispara con click
+izquierdo."
 
 [node name="boton" type="StaticBody2D" parent="."]
 position = Vector2(2818, 104)
@@ -415,16 +479,6 @@ position = Vector2(-114, 145)
 stream = ExtResource("12_c12io")
 volume_db = -16.0
 autoplay = true
-
-[node name="TextEdit9" type="TextEdit" parent="."]
-offset_left = 3316.0
-offset_top = 8.0
-offset_right = 3488.0
-offset_bottom = 97.0
-text = "Apunta con el mouse
-y dispara con click
-izquierdo."
-editable = false
 
 [connection signal="body_entered" from="power" to="power" method="_on_body_entered"]
 [connection signal="body_entered" from="tutorialenemy/Area2D" to="tutorialenemy" method="_on_area_2d_body_entered"]

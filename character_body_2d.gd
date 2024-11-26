@@ -20,7 +20,9 @@ var bullet = 0
 
 func _ready() -> void:
 	$AnimatedSprite2D.play("idle")
+	vida = Global.vida
 	camara2D.corazones_ui(vida)
+	
 	
 	
 
@@ -30,6 +32,9 @@ func disparar():
 
 func enemy_sound():
 	$enemy_death.play()
+	
+	
+
 
 func disminuir_vida(enemypos):
 	#$AnimatedSprite2D.play("hurt")
@@ -61,6 +66,7 @@ func incrementar_vida():
 	vida = vida + 1
 	print("Tienes " + str(vida) + " vidas")
 	camara2D.corazones_ui(vida)
+
 
 func incrementar_nivel():
 	nivel = 1

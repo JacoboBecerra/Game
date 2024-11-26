@@ -19,9 +19,12 @@ func corazones_ui(vida):
 	if vida == 1:
 		heart2.visible=false
 		heart1.visible=true
+		heart3.visible=false
+		heart4.visible=false
 	if vida == 2:
 		heart3.visible=false
 		heart2.visible=true
+		heart4.visible=false
 	if vida == 3:
 		heart4.visible=false
 		heart3.visible=true

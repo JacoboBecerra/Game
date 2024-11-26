@@ -1,9 +1,7 @@
 extends HSlider
 
-@onready var color_rect = $"../ColorRect" # Accede al ColorRect en la escena
+@onready var player_scene = preload("res://Finn.tscn") 
 
-func _ready() -> void:
-	color_rect.color = Color(1, 1, 1, 0)  # Transparente, sin filtro
 
 
 func _on_drag_ended(value_changed: bool) -> void:
@@ -22,8 +20,15 @@ func _on_button_pressed() -> void:
 
 
 func _on_off_pressed() -> void:
-	color_rect.color = Color(1, 1, 1, 0)  # Transparente, sin filtro
+	Global.vida = 2
+	print("Jugarás con 2 vidas")
 
 
 func _on_on_pressed() -> void:
-	color_rect.color = Color(0.8, 0.2, 0.2, 0.4)
+	Global.vida = 3
+	print("Jugarás con 3 vidas")
+
+
+func _on_hard_pressed() -> void:
+	Global.vida = 1
+	print("Jugarás con 1 vida")

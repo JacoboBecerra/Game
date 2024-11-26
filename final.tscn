@@ -115,7 +115,7 @@ position = Vector2(183, -174.5)
 scale = Vector2(12.4375, 11.9063)
 sprite_frames = SubResource("SpriteFrames_amsd1")
 animation = &"idle"
-frame_progress = 0.430043
+frame_progress = 0.447761
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
 position = Vector2(278, 650)
