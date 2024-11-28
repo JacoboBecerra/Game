@@ -16,6 +16,7 @@ func _ready() -> void:
 func _on_button_pressed() -> void:
 	if jugar:
 		get_tree().change_scene_to_file("res://Nivel1.tscn")  # Cambiar a la escena del nivel
+		Global.coins = 0
 	else:
 		print("Porfavor completa el campo requerido o pulsa enter sobre tu username para confirmarlo antes de seguir")
 

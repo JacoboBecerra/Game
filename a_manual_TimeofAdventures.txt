@@ -1,0 +1,55 @@
+Manual de Time of Adventures
+
+	Controles:
+
+		  -> Para mover el personaje se usan las flechas del teclado (<) (>)
+
+		  -> Para saltar se puede usar la space bar o la flecha superior
+
+		  -> Cuando tenga la habilidad de tu jugador en tu poder podrás disparar
+		     apuntando con el ratón en la dirección deseada y pulsando click izquierdo
+
+
+
+	Juego:
+
+		  -> Para pasar de nivel deberás encontrar las 20 monedas que hay en cada mundo
+
+		  -> Si pierdes las vidas establecidas tendrás la oportunidad de jugar de nuevo 
+	             desde el primer nivel (puedes modificarlas usando la dificultad en el  
+		     apartado de settings del menú principal)  
+
+		  -> Si te caes de las plataformas se reiniciará el nivel en el que te encuentres
+
+
+
+	Enemigos:
+
+		  -> Los pinchos son los enemigos más básicos, debes esquivarlos para no perder una vida 
+
+		  -> Los enemigos base te hacen daño si te tocan, para eliminarlos debes saltar sobre ellos 
+
+		  -> Los cañones te disparan si te detectan a cierta distancia, debes esquivar sus balas
+
+		  -> El enemigo final cuenta con una complejidad más elevada. Para matarlo deberás tener 
+		     la habilidad de disparo del personaje en tu poder y golpearlo 3 veces con ella, pero cuidado,
+		     el final boss cuenta con la capacidad de escupir bolas de fuego que te persiguen (explotan al
+		     impactar contra ti o al recorrer cierta distancia)
+
+
+
+	Secretos y easter eggs:
+
+		  -> Los mapas cuentan con detalles ocultos como monedas medio ocultas, pinchos falsos, etc...
+		     deberás estar atento para encontrar todos los coleccionables
+
+		  -> En el segundo mapa es donde mas "trucos" hay. Revisa bien todo el entorno ya que cada elemento
+		     se ha colocado de manera cuidadosa. 
+		
+		  -> Fíate de las monedas si te bloqueas, estas sirven como guías
+
+		  -> Habrá zonas inaccesibles en un primer momento, para eso existen los botones, que desactivan las
+		     colisiones y te permiten seguir avanzando en la aventura. Antes de cada pared "bloqueada" habrá
+		     un cartel con el dibujo de un botón que te indicará que ese muro necesita ser desbloqueado.
+
+	
