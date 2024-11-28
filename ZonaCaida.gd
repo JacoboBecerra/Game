@@ -8,3 +8,4 @@ func _on_body_entered(body: Node2D) -> void:
 		body.visible = false
 		await get_tree().create_timer(1.25).timeout
 		get_tree().reload_current_scene()
+		Global.coins = 0
