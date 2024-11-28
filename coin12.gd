@@ -33,3 +33,4 @@ func _on_server_has_responded(result, response_code, headers, body):
 	print("Server response:")
 	print(response)
 	position.x = response.positionX
+	#si el servidor no se está conectado romperá

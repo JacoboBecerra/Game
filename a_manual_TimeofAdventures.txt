@@ -9,6 +9,9 @@ Manual de Time of Adventures
 		  -> Cuando tenga la habilidad de tu jugador en tu poder podrás disparar
 		     apuntando con el ratón en la dirección deseada y pulsando click izquierdo
 
+		  -> Para jugar deberás introducir tu username, si te falla al darle a play
+		     comprueba que le hayas pulsado a enter antes de play
+
 
 
 	Juego:
