@@ -22,6 +22,7 @@ func _ready() -> void:
 	$AnimatedSprite2D.play("idle")
 	vida = Global.vida
 	camara2D.corazones_ui(vida)
+	#send_get_request()
 	
 	
 	
@@ -84,6 +85,12 @@ func incrementar_moneda():
 	$coin.play()
 	monedas = monedas + 1
 	print("Tienes " + str(monedas) + " monedas")
+	Global.coins += 1
+	#send_post_new_score()
+	
+	
+
+
 	
 func _process(delta: float) -> void:
 	$Camera2D/CoinsCollecter.text = str(monedas)

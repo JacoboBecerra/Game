@@ -16,6 +16,8 @@ func _ready() -> void:
 func _on_button_pressed() -> void:
 	if jugar:
 		get_tree().change_scene_to_file("res://Nivel1.tscn")  # Cambiar a la escena del nivel
+	else:
+		print("Porfavor completa el campo requerido o pulsa enter sobre tu username para confirmarlo antes de seguir")
 
 func _on_line_edit_text_submitted(new_text: String) -> void:
 	# Capturar el texto introducido por el usuario

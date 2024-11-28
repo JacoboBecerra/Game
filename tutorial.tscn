@@ -1,4 +1,4 @@
-[gd_scene load_steps=44 format=4 uid="uid://cep8vceemgvpc"]
+[gd_scene load_steps=45 format=4 uid="uid://cep8vceemgvpc"]
 
 [ext_resource type="Texture2D" uid="uid://hmjhjfbovma2" path="res://Rocky Roads/Backgrounds/desert_b.png" id="1_gr6gc"]
 [ext_resource type="PackedScene" uid="uid://c30eiyjcun7gx" path="res://finn.tscn" id="1_shv5p"]
@@ -17,6 +17,7 @@
 [ext_resource type="AudioStream" uid="uid://dcs10oq63xjhl" path="res://Music/Music/tutorial.mp3" id="12_c12io"]
 [ext_resource type="Texture2D" uid="uid://ct04ft1jr6ukm" path="res://Rocky Roads/Objects/button.png" id="12_efluc"]
 [ext_resource type="AudioStream" uid="uid://dl58oj8j602dj" path="res://Music/Sounds/old-radio-button-click-97549.mp3" id="13_p4vf2"]
+[ext_resource type="Texture2D" uid="uid://uck0lb7dkcdh" path="res://Rocky Roads/Objects/sign.png" id="18_y5kxa"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_pjetv"]
 texture = ExtResource("2_42nm8")
@@ -479,6 +480,16 @@ position = Vector2(-114, 145)
 stream = ExtResource("12_c12io")
 volume_db = -16.0
 autoplay = true
+
+[node name="Sign2" type="Sprite2D" parent="."]
+position = Vector2(2756, 144)
+texture = ExtResource("18_y5kxa")
+
+[node name="Button" type="Sprite2D" parent="Sign2"]
+position = Vector2(-0.999991, 3.00001)
+scale = Vector2(0.453127, 0.5625)
+texture = ExtResource("12_efluc")
+hframes = 4
 
 [connection signal="body_entered" from="power" to="power" method="_on_body_entered"]
 [connection signal="body_entered" from="tutorialenemy/Area2D" to="tutorialenemy" method="_on_area_2d_body_entered"]

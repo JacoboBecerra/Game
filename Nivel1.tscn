@@ -1,4 +1,4 @@
-[gd_scene load_steps=109 format=4 uid="uid://csvi8rirhvkb1"]
+[gd_scene load_steps=110 format=4 uid="uid://csvi8rirhvkb1"]
 
 [ext_resource type="Texture2D" uid="uid://bhq6fq2xgp6pt" path="res://Rocky Roads/Deco/water_a_8frames.png" id="1_vklu4"]
 [ext_resource type="Texture2D" uid="uid://cldvjofhmfhd1" path="res://Rocky Roads/Backgrounds/mountains_b.png" id="2_j4yld"]
@@ -27,6 +27,7 @@
 [ext_resource type="Texture2D" uid="uid://copvduqt2v61a" path="res://Rocky Roads/Objects/flag.png" id="19_a1261"]
 [ext_resource type="PackedScene" uid="uid://p5nlaaae2n36" path="res://vida.tscn" id="25_oubhi"]
 [ext_resource type="PackedScene" uid="uid://c3bpklewu67kv" path="res://brake_block.tscn" id="26_4eenx"]
+[ext_resource type="Script" path="res://coin12.gd" id="26_dtre8"]
 [ext_resource type="Texture2D" uid="uid://ci8leyk1qyded" path="res://Rocky Roads/Objects/cloud_platforms.png" id="28_6yxud"]
 [ext_resource type="PackedScene" uid="uid://d0ol0nghtuae1" path="res://trampolin.tscn" id="28_bm0hh"]
 [ext_resource type="Script" path="res://boton.gd" id="28_te7ma"]
@@ -867,6 +868,7 @@ position = Vector2(1809, 75)
 
 [node name="Coin12" parent="." instance=ExtResource("13_lxr7u")]
 position = Vector2(1994, -151)
+script = ExtResource("26_dtre8")
 
 [node name="Coin17" parent="." instance=ExtResource("13_lxr7u")]
 position = Vector2(1993, 9)
